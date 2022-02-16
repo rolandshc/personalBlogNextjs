@@ -659,25 +659,25 @@
   "resolved" "https://registry.npmjs.org/@napi-rs/triples/-/triples-1.0.3.tgz"
   "version" "1.0.3"
 
-"@next/env@11.1.2":
-  "integrity" "sha512-+fteyVdQ7C/OoulfcF6vd1Yk0FEli4453gr8kSFbU8sKseNSizYq6df5MKz/AjwLptsxrUeIkgBdAzbziyJ3mA=="
-  "resolved" "https://registry.npmjs.org/@next/env/-/env-11.1.2.tgz"
-  "version" "11.1.2"
+"@next/env@11.1.4":
+  "integrity" "sha512-vEW+fSulzZams4nYmcX9LByb1moMBlkwOAVf0eF+44u+1N/h7HDeznPBWIjEfihzTku8rdLB0k7u8VT8AGtNkQ=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-11.1.4.tgz"
+  "version" "11.1.4"
 
 "@next/eslint-plugin-next@11.0.1":
   "integrity" "sha512-UzdX3y6XSrj9YuASUb/p4sRvfjP2klj2YgIOfMwrWoLTTPJQMh00hREB9Ftr7m7RIxjVSAaaLXIRLdxvq948GA=="
   "resolved" "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-11.0.1.tgz"
   "version" "11.0.1"
 
-"@next/polyfill-module@11.1.2":
-  "integrity" "sha512-xZmixqADM3xxtqBV0TpAwSFzWJP0MOQzRfzItHXf1LdQHWb0yofHHC+7eOrPFic8+ZGz5y7BdPkkgR1S25OymA=="
-  "resolved" "https://registry.npmjs.org/@next/polyfill-module/-/polyfill-module-11.1.2.tgz"
-  "version" "11.1.2"
+"@next/polyfill-module@11.1.4":
+  "integrity" "sha512-CY3bOSQf9Dy3+34dFjFbOdg3DRXIGfujb54D/AVO83ajyQczRZ3xdU0i5VV0eSR6B56ktVy3/aelOffpTUq6LA=="
+  "resolved" "https://registry.npmjs.org/@next/polyfill-module/-/polyfill-module-11.1.4.tgz"
+  "version" "11.1.4"
 
-"@next/react-dev-overlay@11.1.2":
-  "integrity" "sha512-rDF/mGY2NC69mMg2vDqzVpCOlWqnwPUXB2zkARhvknUHyS6QJphPYv9ozoPJuoT/QBs49JJd9KWaAzVBvq920A=="
-  "resolved" "https://registry.npmjs.org/@next/react-dev-overlay/-/react-dev-overlay-11.1.2.tgz"
-  "version" "11.1.2"
+"@next/react-dev-overlay@11.1.4":
+  "integrity" "sha512-8/9JflJwRXEvVb6cKCWgRTOmALzDJHpWD5diRbtXWsllqxcMBjtscgnO4PaK+9QyZnSYSUbn0zZUZvxOXOTE1Q=="
+  "resolved" "https://registry.npmjs.org/@next/react-dev-overlay/-/react-dev-overlay-11.1.4.tgz"
+  "version" "11.1.4"
   dependencies:
     "@babel/code-frame" "7.12.11"
     "anser" "1.4.9"
@@ -691,15 +691,15 @@
     "stacktrace-parser" "0.1.10"
     "strip-ansi" "6.0.0"
 
-"@next/react-refresh-utils@11.1.2":
-  "integrity" "sha512-hsoJmPfhVqjZ8w4IFzoo8SyECVnN+8WMnImTbTKrRUHOVJcYMmKLL7xf7T0ft00tWwAl/3f3Q3poWIN2Ueql/Q=="
-  "resolved" "https://registry.npmjs.org/@next/react-refresh-utils/-/react-refresh-utils-11.1.2.tgz"
-  "version" "11.1.2"
+"@next/react-refresh-utils@11.1.4":
+  "integrity" "sha512-jTme207yEV4On9Gk0QJYK2N3kfKVBx17lLOL3qSjqNbqk1TnE51xvzogOCQXNABbzQlBY+J/NN+eylPS4QOKwA=="
+  "resolved" "https://registry.npmjs.org/@next/react-refresh-utils/-/react-refresh-utils-11.1.4.tgz"
+  "version" "11.1.4"
 
-"@next/swc-darwin-arm64@11.1.2":
-  "integrity" "sha512-hZuwOlGOwBZADA8EyDYyjx3+4JGIGjSHDHWrmpI7g5rFmQNltjlbaefAbiU5Kk7j3BUSDwt30quJRFv3nyJQ0w=="
-  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-11.1.2.tgz"
-  "version" "11.1.2"
+"@next/swc-darwin-arm64@11.1.4":
+  "integrity" "sha512-jt8dMtIRWnJjRYLid6NWCxXzXdpr9VFT/vhDp8ioh+TtOR0UKPHMxei6R4GA3RqoyPEfFcSNmkG7OtyqCSxNIw=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-11.1.4.tgz"
+  "version" "11.1.4"
 
 "@node-rs/helper@1.2.1":
   "integrity" "sha512-R5wEmm8nbuQU0YGGmYVjEc0OHtYsuXdpRG+Ut/3wZ9XAvQWyThN08bTh2cBJgoZxHQUPtvRfeQuxcAgLuiBISg=="
@@ -2426,7 +2426,7 @@
   "resolved" "https://registry.npmjs.org/emojis-list/-/emojis-list-2.1.0.tgz"
   "version" "2.1.0"
 
-"encoding@0.1.13":
+"encoding@^0.1.0", "encoding@0.1.13":
   "integrity" "sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A=="
   "resolved" "https://registry.npmjs.org/encoding/-/encoding-0.1.13.tgz"
   "version" "0.1.13"
@@ -5046,17 +5046,17 @@
   "resolved" "https://registry.npmjs.org/next-themes/-/next-themes-0.0.15.tgz"
   "version" "0.0.15"
 
-"next@*", "next@^11.0.1", "next@>=10.2.0":
-  "integrity" "sha512-azEYL0L+wFjv8lstLru3bgvrzPvK0P7/bz6B/4EJ9sYkXeW8r5Bjh78D/Ol7VOg0EIPz0CXoe72hzAlSAXo9hw=="
-  "resolved" "https://registry.npmjs.org/next/-/next-11.1.2.tgz"
-  "version" "11.1.2"
+"next@*", "next@^11.1.4", "next@>=10.2.0":
+  "integrity" "sha512-GWQJrWYkfAKP8vmrzJcCfRSKv955Khyjqd5jipTcVKDGg+SH+NfjDMWFtCwArcQlHPvzisGu1ERLY0+Eoj7G+g=="
+  "resolved" "https://registry.npmjs.org/next/-/next-11.1.4.tgz"
+  "version" "11.1.4"
   dependencies:
     "@babel/runtime" "7.15.3"
     "@hapi/accept" "5.0.2"
-    "@next/env" "11.1.2"
-    "@next/polyfill-module" "11.1.2"
-    "@next/react-dev-overlay" "11.1.2"
-    "@next/react-refresh-utils" "11.1.2"
+    "@next/env" "11.1.4"
+    "@next/polyfill-module" "11.1.4"
+    "@next/react-dev-overlay" "11.1.4"
+    "@next/react-refresh-utils" "11.1.4"
     "@node-rs/helper" "1.2.1"
     "assert" "2.0.0"
     "ast-types" "0.13.2"
@@ -5078,7 +5078,7 @@
     "image-size" "1.0.0"
     "jest-worker" "27.0.0-next.5"
     "native-url" "0.3.4"
-    "node-fetch" "2.6.1"
+    "node-fetch" "2.6.7"
     "node-html-parser" "1.4.9"
     "node-libs-browser" "^2.2.1"
     "os-browserify" "0.3.0"
@@ -5102,10 +5102,10 @@
     "vm-browserify" "1.1.2"
     "watchpack" "2.1.1"
   optionalDependencies:
-    "@next/swc-darwin-arm64" "11.1.2"
-    "@next/swc-darwin-x64" "11.1.2"
-    "@next/swc-linux-x64-gnu" "11.1.2"
-    "@next/swc-win32-x64-msvc" "11.1.2"
+    "@next/swc-darwin-arm64" "11.1.4"
+    "@next/swc-darwin-x64" "11.1.4"
+    "@next/swc-linux-x64-gnu" "11.1.4"
+    "@next/swc-win32-x64-msvc" "11.1.4"
 
 "nice-try@^1.0.4":
   "integrity" "sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ=="
@@ -5119,10 +5119,12 @@
   dependencies:
     "lodash.toarray" "^4.4.0"
 
-"node-fetch@2.6.1":
-  "integrity" "sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.1.tgz"
-  "version" "2.6.1"
+"node-fetch@2.6.7":
+  "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
+  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
+  "version" "2.6.7"
+  dependencies:
+    "whatwg-url" "^5.0.0"
 
 "node-html-parser@1.4.9":
   "integrity" "sha512-UVcirFD1Bn0O+TSmloHeHqZZCxHjvtIeGdVdGMhyZ8/PWlEiZaZ5iJzR189yKZr8p0FXN58BUeC7RHRkf/KYGw=="
@@ -7176,6 +7178,11 @@
   dependencies:
     "punycode" "^2.1.1"
 
+"tr46@~0.0.3":
+  "integrity" "sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o="
+  "resolved" "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"
+  "version" "0.0.3"
+
 "trim-trailing-lines@^1.0.0":
   "integrity" "sha512-rjUWSqnfTNrjbB9NQWfPMH/xRK1deHeGsHoVfpxJ++XeYXE0d6B1En37AHfw3jtfTU7dzMzZL2jjpe8Qb5gLIQ=="
   "resolved" "https://registry.npmjs.org/trim-trailing-lines/-/trim-trailing-lines-1.1.4.tgz"
@@ -7314,10 +7321,10 @@
     "inherits" "^2.0.0"
     "xtend" "^4.0.0"
 
-"unified@^9.0.0", "unified@9.2.0":
-  "integrity" "sha512-vx2Z0vY+a3YoTj8+pttM3tiJHCwY5UFbYdiWrwBEbHmK8pvsPj2rtAX2BFfgXen8T39CJWblWRDT4L5WGXtDdg=="
-  "resolved" "https://registry.npmjs.org/unified/-/unified-9.2.0.tgz"
-  "version" "9.2.0"
+"unified@^9.0.0", "unified@^9.2.1":
+  "integrity" "sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ=="
+  "resolved" "https://registry.npmjs.org/unified/-/unified-9.2.2.tgz"
+  "version" "9.2.2"
   dependencies:
     "bail" "^1.0.0"
     "extend" "^3.0.0"
@@ -7326,10 +7333,10 @@
     "trough" "^1.0.0"
     "vfile" "^4.0.0"
 
-"unified@^9.2.1":
-  "integrity" "sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ=="
-  "resolved" "https://registry.npmjs.org/unified/-/unified-9.2.2.tgz"
-  "version" "9.2.2"
+"unified@9.2.0":
+  "integrity" "sha512-vx2Z0vY+a3YoTj8+pttM3tiJHCwY5UFbYdiWrwBEbHmK8pvsPj2rtAX2BFfgXen8T39CJWblWRDT4L5WGXtDdg=="
+  "resolved" "https://registry.npmjs.org/unified/-/unified-9.2.0.tgz"
+  "version" "9.2.0"
   dependencies:
     "bail" "^1.0.0"
     "extend" "^3.0.0"
@@ -7623,6 +7630,11 @@
   "resolved" "https://registry.npmjs.org/web-namespaces/-/web-namespaces-1.1.4.tgz"
   "version" "1.1.4"
 
+"webidl-conversions@^3.0.0":
+  "integrity" "sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE="
+  "resolved" "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz"
+  "version" "3.0.1"
+
 "webidl-conversions@^4.0.2":
   "integrity" "sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg=="
   "resolved" "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-4.0.2.tgz"
@@ -7649,6 +7661,14 @@
   "integrity" "sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g=="
   "resolved" "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz"
   "version" "2.3.0"
+
+"whatwg-url@^5.0.0":
+  "integrity" "sha1-lmRU6HZUYuN2RNNib2dCzotwll0="
+  "resolved" "https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz"
+  "version" "5.0.0"
+  dependencies:
+    "tr46" "~0.0.3"
+    "webidl-conversions" "^3.0.0"
 
 "whatwg-url@^7.0.0":
   "integrity" "sha512-WUu7Rg1DroM7oQvGWfOiAK21n74Gg+T4elXEQYkOhtyLeWiJFoOGLXPKI/9gzIie9CtwVLm8wtw6YJdKyxSjeg=="
