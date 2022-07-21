@@ -4,6 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 import Layout from '../components/Layout';
 import { getAllPosts } from '../lib/api';
+import { getAllPostsByTag } from '../lib/api';
+import { getLatestPosts } from '../lib/api';
 import { PostType } from '../types/post';
 
 type IndexProps = {
@@ -14,19 +16,16 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
   return (
     <Layout>
       <h1>Roland Shum</h1>
-      <p>Welcome to my personal site. Built with:</p>
-      <ul className="list-disc pl-4 my-6">
-        <li>Next.js</li>
-        <li className="mt-2">Typescript</li>
-        <li className="mt-2">MDX</li>
-        <li className="mt-2">Tailwind CSS</li>
-      </ul>
+      <p>Welcome to my personal site. Built with NextJs.</p>       
       <a
         href="https://github.com/rolandshc/personalBlogNextjs"
-        className="inline-block px-7 py-3 rounded-md text-white dark:text-white bg-blue-600 hover:bg-blue-700 hover:text-white dark:hover:text-white"
+        className="inline-block px-4 py-2 rounded-md text-white dark:text-white bg-gray-600 hover:bg-gray-700 hover:text-white dark:hover:text-white"
       >
-        Get the source code
+        source code
       </a>
+      <br/>
+
+      <h2 className='pt-8'>My latest posts:</h2> 
 
       {posts.map((post) => (
         <article key={post.slug} className="mt-12">
@@ -41,19 +40,16 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
             </Link>
           </h1>
           <p className="mb-3">{post.description}</p>
-          <p>
-            <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-              <a>Read More</a>
-            </Link>
-          </p>
         </article>
       ))}
+
+      
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(['date', 'description', 'slug', 'title']);
+  const posts = getLatestPosts( 2 ,['date', 'description', 'slug', 'title','tag']);
 
   return {
     props: { posts },

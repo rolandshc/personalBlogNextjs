@@ -13,6 +13,9 @@ const Navigation = (): JSX.Element => {
       <Link href="https://www.linkedin.com/in/rolandshum/">
         <a className="text-gray-900 dark:text-white px-6 py-4">Linkedin</a>
       </Link>
+      <Link href="https://github.com/rolandshc">
+        <a className="text-gray-900 dark:text-white px-6 py-4">Github</a>
+      </Link>
     </nav>
   );
 };
