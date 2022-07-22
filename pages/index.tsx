@@ -68,14 +68,15 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
               <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
               {format(parseISO(post.date), 'MMMM dd, yyyy')}
               </p>
-              <h1 className="mb-2 text-xl">
+              <h1 className="mb-1 text-xl">
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
               <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
               {post.title}
               </a>
               </Link>
               </h1>
-              <p className="mb-3">{post.description}</p>
+              <p className="mb-1 text-gray-300 dark:text-gray-600 text-xs">{post.tag}</p>
+              <p className="mb-3 text-sm">{post.description}</p>
               </article>
               )).slice(0,renderPostsNum))
             
