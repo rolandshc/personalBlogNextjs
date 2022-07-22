@@ -43,7 +43,7 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
       </a>
       <br/>
       
-      <h2 className='pt-8'>My blog posts:</h2> 
+      <h2 className='pt-8'>My Blog Posts</h2> 
       <br/>
       <div>
       <a><button className="mb-2 pr-3" id='all' onClick={handleClick}>All</button></a>
