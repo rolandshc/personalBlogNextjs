@@ -43,16 +43,6 @@ export function getAllPosts(fields: string[] = []): PostItems[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
-export function getAllPostsByTag(fields: string[] = []): PostItems[] {
-  const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    //filter posts by tag
-    .filter((post1) => (post1.tag))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
-}
 
 export function getLatestPosts( postNum ,fields: string[] = []): PostItems[] {
   const slugs = getPostSlugs();
