@@ -65,8 +65,8 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
       <br />
       <div>
         <a>
-          <button className="mb-2 pr-3" id="all" onClick={handleClick}>
-            all
+          <button className="mb-2 pr-3" id="All" onClick={handleClick}>
+            All
           </button>
         </a>
         {(() => {
@@ -83,7 +83,7 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
       {(() => {
         if (tag === "latest") {
           renderPostsNum = 3;
-        } else if (tag !== "all") {
+        } else if (tag !== "All") {
           renderPosts = renderPosts.filter((post1) => post1.tag.includes(tag));
           renderPostsNum = 10;
         } else {
