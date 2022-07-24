@@ -25,7 +25,7 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
   let tagArr = [];
 
   for (let i = 0; i < tagMap.length; i++) {
-    const tag = tagMap.at(i);
+    const tag = tagMap[i];
 
     if (tag.includes(",")) {
       let temp = "";
