@@ -4,10 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 import Layout from '../components/Layout';
 import { getAllPosts } from '../lib/api';
-import { getLatestPosts } from '../lib/api';
 import { PostType } from '../types/post';
 import {useState, useEffect} from'react';
-import {StateType} from '../types/state';
 
 type IndexProps = {
   posts: PostType[];
@@ -26,6 +24,9 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
     
     let renderPosts = posts
     let renderPostsNum
+    
+    let tagSet = new Set(posts.map((post) => (post.tag)))
+    let tagArr = Array.from(tagSet);
     
     
     
@@ -46,59 +47,64 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
       <h2 className='pt-8'>My Blog Posts</h2> 
       <br/>
       <div>
-      <a><button className="mb-2 pr-3" id='all' onClick={handleClick}>All</button></a>
-      <a><button className="mb-2 pr-3" id='development' onClick={handleClick}>Development</button></a>
-      <a><button className="mb-2 pr-3" id='personal' onClick={handleClick}>Personal</button></a>
-      </div>
-      
+      <a><button className="mb-2 pr-3" id='all' onClick={handleClick}>all</button></a>
       {
-        (() => {
-          if(tag ==='latest') {
-            renderPostsNum = 3
-          } 
-          else if(tag !=='all') {
-            renderPosts = renderPosts.filter((post1) => ( post1.tag == tag))
-            renderPostsNum = 10
-          }
-          else{
-            renderPostsNum = 100
-          }
-            return (renderPosts.map((post) => (
-              <article key={post.slug} className="mt-12">
-              <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
-              {format(parseISO(post.date), 'MMMM dd, yyyy')}
-              </p>
-              <h1 className="mb-1 text-xl">
-              <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-              <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
-              {post.title}
-              </a>
-              </Link>
-              </h1>
-              <p className="mb-1 text-gray-300 dark:text-gray-600 text-xs">{post.tag}</p>
-              <p className="mb-3 text-sm">{post.description}</p>
-              </article>
-              )).slice(0,renderPostsNum))
+        (() => { 
+          return (tagArr.map(tagId => (
+            <a><button className="mb-2 pr-3" id={tagId} onClick={handleClick}>{tagId}</button></a>
+            )
+            ))}
+            )()}
+            </div>
             
-          })()  
-        }  
-        
-        
-        
-        
-        
-        
-        </Layout>
-        );
-      };
-      
-      export const getStaticProps: GetStaticProps = async () => {
-        const posts = getAllPosts(['date', 'description', 'slug', 'title','tag']);
-        
-        return {
-          props: { posts },
-        };
-      };
-      
-      export default Index;
-      
+            {
+              (() => {
+                if(tag ==='latest') {
+                  renderPostsNum = 3
+                } 
+                else if(tag !=='all') {
+                  renderPosts = renderPosts.filter((post1) => ( post1.tag == tag))
+                  renderPostsNum = 10
+                }
+                else{
+                  renderPostsNum = 100
+                }
+                return (renderPosts.map((post) => (
+                  <article key={post.slug} className="mt-12">
+                  {/* <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
+                  {format(parseISO(post.date), 'MMMM dd, yyyy')}
+                  </p> */}
+                  <h1 className="mb-1 text-xl">
+                  <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+                  <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
+                  {post.title}
+                  </a>
+                  </Link>
+                  </h1>
+                  <p className="mb-1 text-gray-300 dark:text-gray-600 text-xs">{post.tag}</p>
+                  <p className="mb-3 text-sm">{post.description}</p>
+                  </article>
+                  )).slice(0,renderPostsNum))
+                  
+                })()  
+              }  
+              
+              
+              
+              
+              
+              
+              </Layout>
+              );
+            };
+            
+            export const getStaticProps: GetStaticProps = async () => {
+              const posts = getAllPosts(['date', 'description', 'slug', 'title','tag']);
+              
+              return {
+                props: { posts },
+              };
+            };
+            
+            export default Index;
+            
