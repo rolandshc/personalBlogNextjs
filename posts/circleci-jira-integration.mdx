@@ -1,7 +1,7 @@
 ---
 title: CircleCI Jira Integration
 description: The integration of the both platforms and thoughts
-date: "2022-07-21"
+date: "2022-07-25"
 tag: Development,CICD
 ---
 
@@ -11,11 +11,11 @@ CircleCI is a continuous integration and continuous delivery platform that can b
 
 Jira is a software application known as the market standard in project management, task management, and issue tracking.
 
-A demo was created to deomostrate the integration between two platforms.
+A demo was created to demonstrate the integration between the two platforms.
 
 There are 2 plugins listed on the Atlassian Marketplace for Jira. The most common one is the "CircleCI for Jira" plugin.
-I have also tried the "CircleCI-Jira Integration Pro" plugin but then from the exprience, the "CircleCI for Jira"is providing a better automation experience.
-Thus, in this demo I used the "CircleCI for Jira" plugin.
+I have also tried the "CircleCI-Jira Integration Pro" plugin but then from my experience, the "CircleCI for Jira" is providing a better automation experience.
+Thus, in this demo, I used the "CircleCI for Jira" plugin.
 
 I created a new jira instance on the Atlassian and followed this guide to set it up.
 [Guide of CircleCI for Jira plugin](https://circleci.com/docs/jira-plugin)
@@ -36,10 +36,10 @@ Repository I used: [behavior-driven-python](https://github.com/rolandshc/behavio
 
 ### CircleCI orbs
 
-In CircleCI, we manage all the configuration in one single file.[config.yml](https://github.com/rolandshc/behavior-driven-python/blob/master/.circleci/config.yml)
+In CircleCI, we manage all the configurations in one single file.[config.yml](https://github.com/rolandshc/behavior-driven-python/blob/master/.circleci/config.yml)
 
 In the orbs section, I chose python orbs for my project.
-Then, after project creation in CircleCI, I added the jira orbs in below:
+Then, after project creation in CircleCI, I added the Jira orbs below:
 ```
 orbs:
   python: circleci/python@1.5.0
@@ -71,13 +71,13 @@ In the run tests section, I added `pytest --junitxml=results/junit.xml` command 
 
 I added  `- store_test_results: path: results` after the `-run` step so that we can visualize the exported xml result in CircleCI directly.
 
-As for integating with Jira enviornment, the  `jira/notify:` is added so that CircleCI could match issue tickets in targeted Jira with this project.
+As for integrating with the Jira environment, the  `jira/notify:` is added so that CircleCI could match issue tickets in targeted Jira with this project.
 
 `issue_regexp` in `jira/notify:` has been configured in this yml so that the Jira ticket ids could be matched between the 2 platforms.
 
 It has to be customized based on how the issue id pattern is set in Jira. 
 
-The whole picture of the steps part is in below.
+The whole picture of the steps part is below.
 
 ```
  steps:
@@ -136,13 +136,13 @@ However, it did not work for the CircleCI version I used. Thus, I put that step 
 
 It is a basic integration, which helps to show the automatic workflow status from CircleCi for associated tickets in Jira.
 
-It is very scalable and easy to configure because all the configuration stuff would be just in one single file.
+It is very scalable and easy to configure because all the configuration stuff would be just in one single yml file.
 
-However, engineers might have to do some tricks but not just simply follow the guidance documents of CircleCI due to many dependencies and rapid changes of the virtual environments.
+However, engineers might have to do some tricks but not just simply follow the guidance documents of CircleCI due to many changes related to dependencies and virtual environments.
 
-When creating this demo, I had to dig into issues of the github repository of the plugin multiple times for finding answers.
+When creating this demo, I had to dig into issues of the Github repository of the plugin multiple times for finding answers.
 
-Still, it was pretty smooth sine the CircleCI community is opensource.
+Still, it was pretty smooth since the CircleCI community is open source.
 
 Recommended Reading:
 
