@@ -1,11 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { GetStaticProps } from "next";
+import Image from "next/image"
 
-export const About = (title): JSX.Element => {
+export const About = (): JSX.Element => {
   return (
     <Layout
-      customMeta={title}
+      customMeta={{
+        title: 'About - Roland Shum',
+      }}
     >
       <div>
       <h1>About me</h1>
@@ -18,21 +20,18 @@ export const About = (title): JSX.Element => {
       <div>
       <p>Climbing Mount Fuji in 2015. (3,776.24 m) #Japan 
       </p>
-        <img src={`/images/climbFuji2015.jpeg`} width={900} height={900} />
+<Image
+  alt={`fuji`}
+  src={`/images/climbFuji2015.jpeg`}
+  width={900}
+  height={900}
+  priority 
+/>
       </div>
     </div>
 
     </Layout>
   );
 };
-
-export const getStaticProps: GetStaticProps = async () => {
-  const title = 'About - Roland Shum'
-  return {
-    props: { title },
-  };
-};
-
-
 
 export default About;
