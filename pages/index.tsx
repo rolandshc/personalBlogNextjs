@@ -24,7 +24,6 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
   }
 
   const [tag, setTag] = useState<string>(routeData);
-   console.log(routeData)
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const id = e.currentTarget.id;
