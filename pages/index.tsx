@@ -13,21 +13,19 @@ type IndexProps = {
 };
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
-
   const router = useRouter();
   let routeData
+  let tagState
   if(typeof(router.query.tag) !== 'undefined')
   {
-    routeData = router.query.tag
+    routeData = router.query.tag as string
   }
   else{
     routeData = "latest"
   }
 
-  const [tag, setTag] = useState<string>('latest');
-  if(routeData !== 'latest'){
-    setTag(routeData)
-  }
+  const [tag, setTag] = useState<string>(routeData);
+  console.log(routeData)
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const id = e.currentTarget.id;
