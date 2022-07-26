@@ -80,7 +80,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           {/* {frontMatter.tag} */}
           {(() => {
           return tagArr.map((tagId) => (
-            <Link href={{ pathname: "/", query: {tag: tagId}}}>
+            <Link key={tagId} href={{ pathname: "/", query: {tag: tagId}}}>
             <a>
             <button className="mb-2 pr-3">{tagId} </button>
             </a>

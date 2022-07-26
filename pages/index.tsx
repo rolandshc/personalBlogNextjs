@@ -15,15 +15,16 @@ type IndexProps = {
 export const Index = ({ posts }: IndexProps): JSX.Element => {
 
   const router = useRouter();
-  let routeData
-  if (router.query.tag === null){
-    routeData = "latest";
-  }
-  else{
+  let routeData: string | string[] = 'latest'
+  if(typeof(router.query.tag) !== 'undefined')
+  {
     routeData = router.query.tag
   }
-  console.log(routeData)
-  const [tag, setTag] = useState<string>(routeData);
+  else{
+    routeData = "latest"
+  }
+
+  const [tag, setTag] = useState<string|string[]>(routeData);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const id = e.currentTarget.id;
@@ -82,8 +83,8 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
         </a>
         {(() => {
           return tagArr.map((tagId) => (
-            <a>
-              <button className="mb-2 pr-3" id={tagId} onClick={handleClick}>
+            <a key={tagId} >
+              <button className="mb-2 pr-3"id={tagId} onClick={handleClick}>
                 {tagId}
               </button>
             </a>
@@ -103,9 +104,9 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
         return renderPosts
           .map((post) => (
             <article key={post.slug} className="mt-12">
-              {/* <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
+              <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
                   {format(parseISO(post.date), 'MMMM dd, yyyy')}
-                </p> */}
+                </p>
               <h1 className="mb-1 text-xl">
                 <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                   <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
