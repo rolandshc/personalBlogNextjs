@@ -5,14 +5,25 @@ import React from "react";
 import Layout from "../components/Layout";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useRouter } from 'next/router'
 
 type IndexProps = {
   posts: PostType[];
 };
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
-  const [tag, setTag] = useState<string>("latest");
+
+  const router = useRouter();
+  let routeData
+  if (router.query.tag === null){
+    routeData = "latest";
+  }
+  else{
+    routeData = router.query.tag
+  }
+  console.log(routeData)
+  const [tag, setTag] = useState<string>(routeData);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const id = e.currentTarget.id;

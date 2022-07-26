@@ -41,6 +41,33 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
     type: 'article',
     tag: frontMatter.tag,
   };
+
+
+  let tagArr = [];
+  let tag = frontMatter.tag
+  if (tag.includes(",")) {
+    let temp = "";
+    let tempTags = [];
+    for (let index = 0; index < tag.length; index++) {
+      if (tag[index] === ",") {
+        tagArr.push(temp);
+        tempTags.push(temp);
+        temp = "";
+      } else {
+        temp += tag[index];
+      }
+      if (index === tag.length - 1) {
+        tagArr.push(temp);
+        tempTags.push(temp);
+      }
+    }
+  }
+  else
+  {
+    tagArr.push(tag);
+  }
+
+
   return (
     <Layout customMeta={customMeta}>
       <article>
@@ -50,7 +77,16 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
           {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
           <br/>
-          {frontMatter.tag}
+          {/* {frontMatter.tag} */}
+          {(() => {
+          return tagArr.map((tagId) => (
+            <Link href={{ pathname: "/", query: {tag: tagId}}}>
+            <a>
+            <button className="mb-2 pr-3">{tagId} </button>
+            </a>
+            </Link>
+          ));
+        })()}
         </p> 
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
