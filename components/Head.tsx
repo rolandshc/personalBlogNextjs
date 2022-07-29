@@ -10,7 +10,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
   const meta: MetaProps = {
     title: 'Roland Shum',
     description:
-      'A personal site, share my latest findings and thoughts.',
+      'I am Roland Shum. This is my personal site, sharing my latest findings and thoughts.',
     image: `${WEBSITE_HOST_URL}/images/site-preview.png`,
     type: 'website',
     ...customMeta,

@@ -35,6 +35,8 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           >
             Roland Shum
           </a><br/>
+          Copyright © 2022
+          <br/>
           <span className="text-gray-200 dark:text-gray-800 ">So we do not focus on what is seen, but on what is unseen. For what is seen is temporary, but what is unseen is eternal.</span>
         </div>
       </footer>

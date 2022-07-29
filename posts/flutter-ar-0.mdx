@@ -1,0 +1,51 @@
+---
+title: My Flutter AR Development Journey Ep.0
+description: First blog for my AR development using Flutter
+date: "2022-07-29"
+tag: Development,AR, Flutter
+---
+
+### AR development with Flutter
+
+It has been a while since I tried out different plugins for building AR mobile applications using Flutter.
+
+There are 3 plugins currently availabe on the pub.dev.
+
+1. [ar_flutter_plugin](https://pub.dev/packages/ar_flutter_plugin)
+
+2. [arkit_plugin](https://pub.dev/packages/arkit_plugin)
+
+3. [arcore_flutter_plugin](https://pub.dev/packages/arcore_flutter_plugin)
+
+I tried them all using:
+
+1. Flutter 3.0.5 / 2.10.5
+2. iOS 15
+3. Android SDK 31
+
+#### ar_flutter_plugin
+It works well for both iOS and Android with the latest Flutter version for the AR object placement. Target to test out all different feature wrappers on both platforms.
+
+#### arkit_plugin
+The latest version was push 9 months ago but still I could run it after the Flutter 3.0 breaking changes.
+Not continue to test this since the multiplatform plugin `ar_flutter_plugin` works now.
+
+#### arcore_flutter_plugin
+The latest version was push 14 months ago and it is not ready for null-safe. Not to test further until there is any update from the community.
+
+
+
+<Image
+  alt={`Local Web Object Placement`}
+  src={`/images/localWebObjectPlacement.jpeg`}
+  width={828}
+  height={1972}
+  priority
+/>
+
+
+
+
+Recommended Reading:
+
+[Developing packages & plugins](https://docs.flutter.dev/development/packages-and-plugins/developing-packages)
