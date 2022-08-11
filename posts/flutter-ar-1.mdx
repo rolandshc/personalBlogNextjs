@@ -1,0 +1,46 @@
+---
+title: My Flutter AR Development Journey Ep.1
+description: Adding AR Object anchor with plane detection and taking the screenshot
+date: "2022-08-11"
+tag: Development,AR,Flutter
+---
+
+### AR development with Flutter
+
+I have tested the screenshot example of the [ar_flutter_plugin](https://pub.dev/packages/ar_flutter_plugin).
+
+However, the example given on pub.dev was not null-safe and not compatible with Flutter version 3.0.
+
+The code base had been modified and it could be run on iOS and Android now. The available functionalities are:
+
+1. Plane detection
+2. Feature Points visualization
+3. Adding anchor
+4. Placing web object to the anchor created
+5. Remove all objects' anchors
+6. Object tapping detection
+7. Taking the screenshot (no saving yet)
+
+#### Modification
+
+1. Removed AppBar and ARView constraint
+2. ARView is now available in full screenshot
+3. Add SafeArea feature for multiple Android devices support
+
+
+<Image
+  alt={`Local Web Object Placement`}
+  src={`/images/arPlaneObjectPlacement.jpeg`}
+  width={828}
+  height={1972}
+  priority
+/>
+
+
+
+
+Recommended Reading:
+
+[Flutter SafeArea](https://api.flutter.dev/flutter/widgets/SafeArea-class.html)
+
+[Migration to null safety](https://dart.dev/null-safety/migration-guide)

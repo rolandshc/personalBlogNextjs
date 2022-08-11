@@ -1,0 +1,74 @@
+---
+title: AWS Lambda function logging with Cloudwatch
+description: Step by step demostration and explaination
+date: "2022-07-25"
+tag: Development,CICD, Python
+---
+
+### AWS Lambda function logging with Cloudwatch
+
+
+
+### AWS Lambda Pricing
+
+The AWS Lambda free tier includes one million free requests per month and 400,000 GB-seconds of compute time per month, usable for functions powered by both x86, and Graviton2 processors, in aggregate. 
+
+
+
+<Image
+  alt={`circleci plugins`}
+  src={`/images/circleci_plugins.png`}
+  width={1318}
+  height={564}
+  priority
+/>
+
+
+
+```
+ steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+          app-dir: pytest-bdd/  # If you're requirements.txt isn't in the root directory.
+          # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
+      - run:
+          name: run tests
+          command: pytest --junitxml=results/junit.xml
+
+      - store_test_results:
+          path: results
+
+      - jira/notify: # Runs the Jira's "notify" commands after a build has finished its steps.
+              issue_regexp: '[A-Z]{2,30}[0-9]-[0-9]+'
+              scan_commit_body: true
+```
+
+
+
+#### Jira view
+
+<Image
+  alt={`jira demo`}
+  src={`/images/jiraBuild_0.png`}
+  width={1854}
+  height={786}
+/>
+
+## Conclucsion
+
+It is a basic integration, which helps to show the automatic workflow status from CircleCi for associated tickets in Jira.
+
+It is very scalable and easy to configure because all the configuration stuff would be just in one single yml file.
+
+However, engineers might have to do some tricks but not just simply follow the guidance documents of CircleCI due to many changes related to dependencies and virtual environments.
+
+When creating this demo, I had to dig into issues of the Github repository of the plugin multiple times for finding answers.
+
+Still, it was pretty smooth since the CircleCI community is open source.
+
+Recommended Reading:
+
+[Filtering Cloudwatch Logs using Python and boto3 SDK](https://www.thelambdablog.com/filtering-cloudwatch-logs-by-loggroups-and-logstreams-and-reading-them-using-python-and-the-boto3-sdk)
+
+[How to use Jira for CICD - Atlassian](https://www.atlassian.com/software/jira/guides/developers/ci-cd)
