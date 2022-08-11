@@ -2,6 +2,7 @@ import NextHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MetaProps } from '../types/layout';
+import Script from 'next/script';
 
 export const WEBSITE_HOST_URL = 'https://rolands.tech';
 
@@ -15,6 +16,46 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
     type: 'website',
     ...customMeta,
   };
+  // const structuredData = () => {
+  //   return {
+  //     _html: `
+  //     {
+  //       "@context": "http://schema.org",
+  //       "@type": "Person",
+  //       "familyName": "Shum",
+  //       "givenName": "Roland",
+  //       "worksFor": "https://rolands.tech/",
+  //       "jobTitle": "Software Developer",
+  //       "alumniOf": "https://ut.ee/",
+  //       "image": "https://rolands.tech/_next/image?url=%2Fimages%2FclimbFuji2015.jpeg&w=1920&q=75",
+  //       "gender": "http://schema.org/Male",
+  //       "sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc",https://rolands.tech/],
+  //       "alumniOf":{
+  //       "@type": "EducationalOrganization",
+  //       "name": "University of Tartu",
+  //       "url":"https://ut.ee/et"}
+  //     }
+  //     `
+  //   }
+  // }
+  const structuredData = `
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "familyName": "Shum",
+    "givenName": "Roland",
+    "worksFor": "https://rolands.tech/",
+    "jobTitle": "Software Developer",
+    "alumniOf": "https://ut.ee/",
+    "image": "https://rolands.tech/_next/image?url=%2Fimages%2FclimbFuji2015.jpeg&w=1920&q=75",
+    "gender": "http://schema.org/Male",
+    "sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc",https://rolands.tech/],
+    "alumniOf":{
+    "@type": "EducationalOrganization",
+    "name": "University of Tartu",
+    "url":"https://ut.ee/et"}
+  }
+  `
 
   return (
     <NextHead>
@@ -30,6 +71,11 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       {meta.date && (
         <meta property="article:published_time" content={meta.date} />
       )}
+      <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      key="item-jsonld"
+    />
     </NextHead>
   );
 };
