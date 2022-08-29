@@ -11,6 +11,7 @@ export const Gallery = (): JSX.Element => {
   ]
   return (
     <Layout>
+      I love travelling.
       <GridGallery images={images}/>
     </Layout>
   );
