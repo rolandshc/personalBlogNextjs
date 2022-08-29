@@ -22,7 +22,7 @@ export const About = (): JSX.Element => {
       </p>
 <Image
   alt={`fuji`}
-  src={`/images/climbFuji2015.jpeg`}
+  src={`/images/climb-fuji-2015.jpeg`}
   width={900}
   height={900}
   priority 
