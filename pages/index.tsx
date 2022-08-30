@@ -62,7 +62,6 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
 
   return (
     <Layout>
-      <h1>Roland Shum</h1>
       <p>Welcome to my personal site. Built with NextJs.</p>
       <a
         href="https://github.com/rolandshc/personalBlogNextjs"
