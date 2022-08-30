@@ -11,7 +11,7 @@ export const Gallery = (): JSX.Element => {
   ]
   return (
     <Layout>
-      I love travelling.
+      <h2 className="py-3">I love travelling.</h2>
       <GridGallery images={images}/>
     </Layout>
   );
