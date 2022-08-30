@@ -18,12 +18,12 @@ export const About = (): JSX.Element => {
         Yet it is short, text me to know more.
       </p>
       <div>
-      <p>Climbing Mount Fuji in 2015. (3,776.24 m) #Japan 
+      <p>Summer in Rhodes, Greece @2022
       </p>
 <Image
-  alt={`fuji`}
-  src={`/images/climb-fuji-2015.jpeg`}
-  width={900}
+  alt={`rhodes`}
+  src={`/images/rhodes-2022.JPG`}
+  width={1200}
   height={900}
   priority 
 />

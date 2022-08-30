@@ -5,9 +5,12 @@ import GridGallery from "../components/GridGallery";
 
 export const Gallery = (): JSX.Element => {
   const images = [
-    "/images/over-baltic.png",
-    "/images/hong-kong-night.png",
-
+    "/images/gallery/cafe-regatta-helsinki.JPG",
+    "/images/gallery/colosseum-rome.JPG",
+    "/images/gallery/pantheon-rome.JPG",
+    "/images/gallery/florence.JPG",
+    "/images/gallery/venice.JPG",
+    "/images/gallery/vilnius.JPG"
   ]
   return (
     <Layout>
