@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 import { useState } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 type IndexProps = {
   posts: PostType[];
@@ -14,13 +14,11 @@ type IndexProps = {
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
   const router = useRouter();
-  let routeData
-  if(typeof(router.query.tag) !== 'undefined')
-  {
-    routeData = router.query.tag as string
-  }
-  else{
-    routeData = "latest"
+  let routeData;
+  if (typeof router.query.tag !== "undefined") {
+    routeData = router.query.tag as string;
+  } else {
+    routeData = "latest";
   }
 
   const [tag, setTag] = useState<string>(routeData);
@@ -81,8 +79,8 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
         </a>
         {(() => {
           return tagArr.map((tagId) => (
-            <a key={tagId} >
-              <button className="mb-2 pr-3"id={tagId} onClick={handleClick}>
+            <a key={tagId}>
+              <button className="mb-2 pr-3" id={tagId} onClick={handleClick}>
                 {tagId}
               </button>
             </a>
@@ -103,8 +101,8 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
           .map((post) => (
             <article key={post.slug} className="mt-12">
               <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
-                  {format(parseISO(post.date), 'MMMM dd, yyyy')}
-                </p>
+                {format(parseISO(post.date), "MMMM dd, yyyy")}
+              </p>
               <h1 className="mb-1 text-xl">
                 <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                   <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">

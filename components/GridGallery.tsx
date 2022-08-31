@@ -1,5 +1,6 @@
 import { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import Image from "next/image";
 
 export default function GridGallery({ images }) {
   const [imagesShownArray, setImagesShownArray] = useState(
@@ -16,7 +17,7 @@ export default function GridGallery({ images }) {
   };
 
   return (
-    <div className="grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-1">
+    <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-1">
       {images &&
         images.map((imageUrl, index) => (
           <VisibilitySensor
@@ -48,7 +49,13 @@ function GridGalleryCard({ imageUrl, show }) {
           {imageUrl.split(".")[0].substring(16)}
         </div>
       </div>
-      <img src={imageUrl} alt="" />
+      <Image
+        alt={imageUrl.split(".")[0].substring(16)}
+        src={imageUrl}
+        width={1350}
+        height={900}
+        priority
+      />
     </div>
   );
 }
