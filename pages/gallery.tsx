@@ -19,7 +19,7 @@ export const Gallery = (): JSX.Element => {
         travel and read history. Since 2019, I have been based in Tallinn.
       </p>
       <p>
-        I would implement the categories here. Pending to update.
+        I would implement the categories functionality here. Pending to update.
       </p>
       <GridGallery images={images} />
     </Layout>

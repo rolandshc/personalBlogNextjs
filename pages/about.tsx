@@ -17,8 +17,7 @@ export const About = (): JSX.Element => {
         </p>
         <p>Active in software development, AIML and XR.</p>
         <p>
-          Blogging helps me to reflect and learn. Adding new features to this
-          site also helps to sharpen my modern web development skills.
+          Blogging helps me to reflect and learn.
         </p>
         <p>
           A beliver. A front liner. Tanky and try-hard.
