@@ -1,0 +1,37 @@
+---
+title: Alphatensor - Algorithm Discovery of Matrix multiplication
+description: Such a giant leap for computing
+date: "2022-11-08"
+tag: Machine Learning
+---
+
+DeepMind of Google just establised the paper introducing AlphaTensor, a new AI system for discovering efficient and correct algorithms.
+
+### Speedup the matrix multiplication
+
+From the example, AlphaTensor is able to improve the Strassen’s two-level algorithm in a finite field for the first time since its discovery 50 years ago.
+There are two distinct computations in neural networks, feed-forward and backpropagation. And there are many mathematic operations in between. Matrix multiplication is one of the major operations, which are usually being run by GPU thanks to the high speed of parallel computing. 
+
+<Image
+  alt={`feed-forward neural network`}
+  src={`/images/feedforwardneuralnetwork.gif`}
+  width={1314}
+  height={813}
+  priority
+/>
+
+
+### The message
+
+It is really an impressive finding. Given that the deep learning AI system AlphaTensor heavily relies on so many matrix operations, we could use it to improve the basic design of its own. Like what the company told, the trained algorithm would be plugged into the firmware of the CPU/GPU units which make the basic operations even faster.
+HERE WE GO!
+
+
+
+
+
+
+Recommended Reading:
+
+[Discovering novel algorithms with AlphaTensor](https://www.deepmind.com/blog/discovering-novel-algorithms-with-alphatensor)
+
