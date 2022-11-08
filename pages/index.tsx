@@ -90,7 +90,7 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
 
       {(() => {
         if (tag === "latest") {
-          renderPostsNum = 1;
+          renderPostsNum = 3;
         } else if (tag !== "All") {
           renderPosts = renderPosts.filter((post1) => post1.tag.includes(tag));
           renderPostsNum = 10;
