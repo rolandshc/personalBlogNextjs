@@ -1,0 +1,38 @@
+---
+title: Challenges of SaMD (Software as a Medical Device) Product Development
+description: The primary challenges faced by the developers
+date: "2022-09-12"
+tag: Development,Medtech
+---
+
+The trend of the software industry has been evolving throughout the years. In the past, projects were mainly about digitalization, rule based automation, and local server and electronic storage. Today we speak about cloud, serverless architecture, Internet of Things (IOT), and Machine Learning. It is a commonly known fact that passing all of the regulatory and quality requirements is far from an easy task. As for developers, the medical software industry is considered to be a non-comparable industry, having additional requirements. Below are the primary challenges faced by the developers.
+
+
+
+#### Team Gap
+
+In the software industry, terms are evolving. All these newer techs can now be incorporated into the product. However, the regulatory side is typically lagging because regulators have to oversee all the applications coming their way to guard public health safety. The regulator needs to understand the risk of using each of the chosen new technologies, and it is extremely challenging to come up with the regulatory policies that are accommodating to all different types of applications. On the other hand, the proper nouns in the medical QMS field, like “Design Control”, “Traceability Matrix” and “SOUP”, are unknown to developers outside this field. Thus, communication between the developer and the quality side often does not go well. This poor communication could potentially slow down the product development process. It becomes even worse when the team size is so small that the developer has to contribute on the quality flank as well.
+
+#### Testing Requirement
+
+In common agile practice, developers work on the user story, implement the functionality, complete the internal testing, and deliver the value after each sprint. And if the CI/CD automation is in place, the changes will be tested automatically with the predefined test cases (including all the unit-test, integrated test and system test cases). Doesn’t that sound solid? However, from our experience, these are far from what FDA requires.  The V&V framework in this industry is to compare your software device to a predicate device in terms of safety and effectiveness. In many modern SaMD, many software components provide non-deterministic outputs; for example, a prediction score from a machine learning model, or a 3D segmentation of a vessel from a processed MRI image. Then the performance evaluation of this component often requires extra steps of validation and controls from FDA’s feedback. Developers outside this field often do not have enough expertise to contribute to this kind of testing. The holistic planning from engineering, software development, RA and QA can be extremely challenging.
+
+#### QMS Control
+
+QMS is a standard practice in this field to ensure standardized practice for different aspects of the medical device. It applies to not only the software development, but also to all of the premarket and post-marketing activities; including device records, risk management, labeling, employee training, and so on. In SDLC, the common agile development practice has to be “integrated” with the QMS controls. If good procedures are not set up at the beginning of the development, then it will be very difficult for the team to create those quality compliance records as remedial measures; developers might not be good at project management and planning; even product owner or scrum master might not be familiar with the QMS procedures (like Design Control) if they are new to this field. The hidden cost without a good QMS can be expensive, especially for a start-up business.
+
+#### Documentation
+
+Documentation is the main focus of this post. During development, developers trace their updates in project management tools like Jira and Trello. The documentation there is usually minimal, and less structured. In reality, a large group of developers believes in “Good code documents itself”. Due to the rapidness of agile development, the software delivers much faster, and in many small pieces. Documentation becomes less important during the sprint cycle since the requirements are changing and occur concurrently. Also, developers who are good at coding might not be good at technical writing. Even if they are good technical writers, the technical documents and evidence might not fit the purpose of regulatory compliance. As a result, the “debt” of documentation would grow as the development continues. 
+
+We encourage developers to position QMS as a way to ensure product risk (e.g., implementation error, unclear requirement which leads to incomplete testing) is minimized through standardized practices. Quality and regulatory documentations are the outputs of the process, but the best practices should still be followed under other circumstances when no documentation is produced. 
+
+#### What Should You Do Next?
+
+For companies in the SaMD field, establishing a QMS and providing necessary QMS and regulatory training to different team members (including the developer) as soon as possible would be ideal. The RookQS team is experienced in providing QMS training, software development lifecycle training, drafting and revising technical documentation, drafting testing plans, and conducting testing. Each of our team members has expertise in different areas like QMS, regulation, technical writing, SaMD testing, and technical support. We are here to help in any way we can.
+
+
+Company Blog link:
+
+[Challenges of SaMD (Software as a Medical Device) Product Development](https://rookqs.com/challenges-of-samd-software-as-a-medical-device-product-development/)
+
