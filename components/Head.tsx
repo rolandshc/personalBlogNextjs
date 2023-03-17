@@ -2,7 +2,6 @@ import NextHead from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MetaProps } from '../types/layout';
-import Script from 'next/script';
 
 export const WEBSITE_HOST_URL = 'https://rolands.tech';
 
