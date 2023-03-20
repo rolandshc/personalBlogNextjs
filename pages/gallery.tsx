@@ -15,17 +15,17 @@ export const Gallery = (): JSX.Element => {
     <Layout>
       <h2 className="py-3">Photography Gallery</h2>
       <p>
-        I started taking photos with my first Nikon DSLR camera since 2010. I
+        I started taking photos with my first Nikon DSLR since 2010. I
         love to travel and read history.
       </p>
       <p>
         I would implement a category functionality here. Pending to update.
-        <br/>Current Gears below..
+        <br/>Current gears below..
         <br/><br/>Body: Sony a7 III
         </p>
-        Lenses:
+        Lens:
       <ul className="px-4">
-        - Lvoigtlander 15mm f4.5 iii<br/>
+        - Voigtlander 15mm f4.5 iii<br/>
         - Sony FE 24-105mm F4 G OSS<br/>
         - Sony FE 85mm F1.8<br/>
         </ul>
