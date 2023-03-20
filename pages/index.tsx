@@ -79,11 +79,11 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
         
         {(() => {
           return tagArr.map((tagId) => (
-            <a key={tagId}>
+            <span key={tagId}>
               <button className="mb-2 pr-3" id={tagId} onClick={handleClick}>
                 {tagId}
               </button>
-            </a>
+            </span>
           ));
         })()}
       </div>
