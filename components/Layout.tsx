@@ -12,9 +12,11 @@ type LayoutProps = {
   customMeta?: MetaProps;
 };
 
-export const WEBSITE_HOST_URL = "https://rolands.tech";
+export const WEBSITE_HOST_URL = "https://rolandshum.com";
 
 const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
+  const year = new Date().getUTCFullYear();
+
   return (
     <>
       <Head customMeta={customMeta} />
@@ -52,11 +54,11 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           <a
             className="text-gray-600 dark:text-gray-600"
             href="https://www.linkedin.com/in/rolandshum"
+            target="_blank"
           >
             Roland Shum
           </a>
-          <Link href="https://www.linkedin.com/in/rolandshum">
-            <a className="text-gray-900 dark:text-white px-3 py-2">
+            <a href="https://www.linkedin.com/in/rolandshum" className="text-gray-900 dark:text-white px-3 py-2" target="_blank">
               <Image
                 alt={`linkedin`}
                 src={`/images/linkedin.png`}
@@ -65,9 +67,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
                 priority
               />
             </a>
-          </Link>
-          <Link href="https://github.com/rolandshc">
-            <a className="text-gray-900 dark:text-white px-3 py-2">
+            <a href="https://github.com/rolandshc" className="text-gray-900 dark:text-white px-3 py-2" target="_blank">
               <Image
                 alt={`github`}
                 src={`/images/github-11-xxl.png`}
@@ -76,9 +76,8 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
                 priority
               />
             </a>
-          </Link>
           <br />
-          Copyright © 2023
+          Copyright © {year}
           <br />
           <span className="text-gray-200 dark:text-gray-800 ">
             So we do not focus on what is seen, but on what is unseen. For what
