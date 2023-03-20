@@ -18,7 +18,7 @@ export const Blog = ({ posts }: IndexProps): JSX.Element => {
   if (typeof router.query.tag !== "undefined") {
     routeData = router.query.tag as string;
   } else {
-    routeData = "latest";
+    routeData = "All";
   }
 
   const [tag, setTag] = useState<string>(routeData);
@@ -79,13 +79,11 @@ export const Blog = ({ posts }: IndexProps): JSX.Element => {
       </div>
 
       {(() => {
-        if (tag === "latest") {
-          renderPostsNum = 3;
-        } else if (tag !== "All") {
+        if (tag == "All") {
+          renderPostsNum = 100;
+        } else {
           renderPosts = renderPosts.filter((post1) => post1.tag.includes(tag));
           renderPostsNum = 10;
-        } else {
-          renderPostsNum = 100;
         }
         return renderPosts
           .map((post) => (
