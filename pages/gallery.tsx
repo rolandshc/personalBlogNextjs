@@ -25,9 +25,9 @@ export const Gallery = (): JSX.Element => {
         </p>
         Lenses:
       <ul className="px-4">
-        <li>Lvoigtlander 15mm f4.5 iii</li>
-        <li>Sony FE 24-105mm F4 G OSS</li>
-        <li>Sony FE 85mm F1.8</li>
+        - Lvoigtlander 15mm f4.5 iii<br/>
+        - Sony FE 24-105mm F4 G OSS<br/>
+        - Sony FE 85mm F1.8<br/>
         </ul>
       <GridGallery images={images} />
     </Layout>
