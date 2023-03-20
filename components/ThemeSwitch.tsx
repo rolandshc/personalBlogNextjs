@@ -20,9 +20,9 @@ const ThemeSwitch = (): JSX.Element => {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
-        <a className="text-sm text-gray-900 dark:text-white">Dark Mode 🌙</a>
+        <span className="modeSwitcher">Dark Mode 🌙</span>
       ) : (
-        <a className="text-sm text-gray-900 dark:text-white">Light Mode 🔆</a>
+        <span className="modeSwitcher">Light Mode 🔆</span>
       )}
     </button>
   );
