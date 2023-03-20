@@ -21,7 +21,7 @@ const ThemeSwitch = (): JSX.Element => {
       type="button"
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-      {theme === "light"? (<span>Roland Shum 🌙</span>):<span>Roland Shum 🔆</span>}
+      {theme === "light"? (<span>Roland Shum 🔆</span>):<span>Roland Shum 🌙</span>}
     </button>
   );
 };
