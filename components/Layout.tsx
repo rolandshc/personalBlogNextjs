@@ -49,15 +49,8 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         <div className="max-w-5xl px-8 py-4 mx-auto">{children}</div>
       </main>
       <footer className="select-none py-8">
-        <div className="max-w-5xl px-8 mx-auto text-gray-600 dark:text-gray-600">
-          Built by{" "}
-          <a
-            className="text-gray-600 dark:text-gray-600"
-            href="https://www.linkedin.com/in/rolandshum"
-            target="_blank"
-          >
-            Roland Shum
-          </a>
+        <div className="max-w-5xl px-8 mx-auto text-gray-600 dark:text-gray-400">
+        Copyright © {year} Roland Shum
             <a href="https://www.linkedin.com/in/rolandshum" className="text-gray-900 dark:text-white px-3 py-2" target="_blank">
               <Image
                 alt={`linkedin`}
@@ -76,12 +69,11 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
                 priority
               />
             </a>
-          <br />
-          Copyright © {year}
-          <br />
-          <span className="text-gray-200 dark:text-gray-800 ">
+          <br/>
+          <span className="text-gray-500 ">
             So we do not focus on what is seen, but on what is unseen. For what
             is seen is temporary, but what is unseen is eternal.
+            <br/>(2 Corinthians 4:18)
           </span>
         </div>
       </footer>
