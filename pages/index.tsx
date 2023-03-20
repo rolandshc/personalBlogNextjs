@@ -6,7 +6,9 @@ export const Index = (): JSX.Element => {
     <Layout>
       <div className="typewriter">
         <h1>
-          <code className="text-3xl sm:text-9xl select-none">Hello World</code>
+          <code className="text-3xl sm:text-3xl md:text-6xl lg:text-9xl select-none">
+            Hello World
+          </code>
         </h1>
       </div>
       <p className="py-20 select-none ">

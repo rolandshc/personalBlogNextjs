@@ -3,7 +3,7 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const Navigation = (): JSX.Element => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500">
+    <nav className="flex items-center justify-between flex-wrap bg-teal-500 ">
       {/* <div className="flex select-none items-center flex-shrink-0 text-gray-900 dark:text-white mr-8 py-3">
         <ThemeSwitch/>
       </div> */}
