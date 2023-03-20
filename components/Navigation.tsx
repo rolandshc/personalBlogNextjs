@@ -4,17 +4,14 @@ import ThemeSwitch from "./ThemeSwitch";
 const Navigation = (): JSX.Element => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 ">
-      {/* <div className="flex select-none items-center flex-shrink-0 text-gray-900 dark:text-white mr-8 py-3">
-        <ThemeSwitch/>
-      </div> */}
+      <div className="block sm:inline-block md:py-5 py-3">
+        <a className="text-gray-900 dark:text-white" href="/">
+          Roland Shum&nbsp;
+        </a>
+        <ThemeSwitch />
+      </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
-          <div className="block sm:inline-block md:py-5 py-3">
-            <a className="text-gray-900 dark:text-white" href="/">
-              Roland Shum&nbsp;
-            </a>
-            <ThemeSwitch />
-          </div>
           <a
             href="/about"
             className="block sm:inline-block text-gray-900 dark:text-white mr-8 md:py-5 py-3 px-5"
