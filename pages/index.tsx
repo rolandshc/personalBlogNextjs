@@ -63,7 +63,7 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
       <p>Welcome to my personal site. Built with NextJs.</p>
       <a
         href="https://github.com/rolandshc/personalBlogNextjs"
-        className="inline-block px-4 py-2 rounded-md text-white dark:text-white bg-gray-600 hover:bg-gray-700 hover:text-white dark:hover:text-white"
+        className="inline-block px-4 py-2 rounded-md text-white dark:text-white bg-gray-600 hover:bg-gray-700 hover:text-white dark:hover:text-white" target="_blank"
       >
         source code
       </a>
