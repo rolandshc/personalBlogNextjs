@@ -1,29 +1,23 @@
-import Link from "next/link";
 import React from "react";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Navigation = (): JSX.Element => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500">
-      <div className="flex select-none items-center flex-shrink-0 text-gray-900 dark:text-white mr-6 py-2">
-        Roland Shum
+      <div className="flex select-none items-center flex-shrink-0 text-gray-900 dark:text-white mr-8 py-3">
+        <ThemeSwitch/>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
-          <Link href="/">
-            <a className="block sm:inline-block text-gray-900 dark:text-white mr-8 py-1">
+        <a href="/about" className="block sm:inline-block text-gray-900 dark:text-white mr-8 md:py-5 py-3 px-5">
+              About 🤘
+              </a>
+            <a href="/" className="block sm:inline-block text-gray-900 dark:text-white mr-8 md:py-5 py-3 px-5">
               Blog 📝
             </a>
-          </Link>
-          <Link href="/about">
-            <a className="block sm:inline-block text-gray-900 dark:text-white mr-8 py-1">
-              About 🤘
-            </a>
-          </Link>
-          <Link href="/gallery">
-            <a className="block sm:inline-block text-gray-900 dark:text-white mr-8 py-1">
+            <a href="/gallery" className="block sm:inline-block text-gray-900 dark:text-white mr-8 md:py-5 py-3 px-5">
               Photography 📷
-            </a>
-          </Link>
+              </a>
         </div>
       </div>
     </nav>

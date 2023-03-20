@@ -110,10 +110,10 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
                   </a>
                 </Link>
               </h1>
-              <p className="mb-1 text-gray-300 dark:text-gray-600 text-xs">
+              <p className="mb-1 text-gray-700 dark:text-gray-400 text-xs">
                 {post.tag}
               </p>
-              <p className="mb-3 text-sm">{post.description}</p>
+              <p className="mb-3 text-sm text-gray-400 dark:text-gray-500">{post.description}</p>
             </article>
           ))
           .slice(0, renderPostsNum);
