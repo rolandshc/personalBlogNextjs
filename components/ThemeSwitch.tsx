@@ -14,7 +14,7 @@ const ThemeSwitch = (): JSX.Element => {
   const isDark = theme === "dark";
   return (
     <button
-      className="theme-button md:py-5 py-3 pl-5 text-3xl"
+      className="theme-button md:py-5 py-3 pl-5"
       type="button"
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
