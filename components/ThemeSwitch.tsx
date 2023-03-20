@@ -12,16 +12,18 @@ const ThemeSwitch = (): JSX.Element => {
   if (!mounted) return null;
 
   const isDark = theme === "dark";
-  const color = isDark ? "#fff" : "#000";
-  const maskColor = isDark ? "#000" : "#fff";
   return (
     <button
-      className="theme-button mr-8 md:py-5 py-3"
+      className="theme-button mr-8 md:py-5 py-3 px-5"
       type="button"
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      {theme === "light" ? <span>🔆</span> : <span>🌙</span>}
+      {theme === "light" ? (
+        <a className="text-sm text-gray-900 dark:text-white">Dark Mode 🌙</a>
+      ) : (
+        <a className="text-sm text-gray-900 dark:text-white">Light Mode 🔆</a>
+      )}
     </button>
   );
 };

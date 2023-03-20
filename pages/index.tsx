@@ -11,7 +11,7 @@ export const Index = (): JSX.Element => {
           </code>
         </h1>
       </div>
-      <p className="py-20 select-none ">
+      <p className="py-5 sm:py-20 select-none ">
         Welcome to my personal blog. Built with{" "}
         <a href="https://nextjs.org/" target="_blank">
           NextJS

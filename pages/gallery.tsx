@@ -13,7 +13,7 @@ export const Gallery = (): JSX.Element => {
   ];
   return (
     <Layout>
-      <h1 className="py-3 select-none">Photography Gallery</h1>
+      <h1 className="select-none">Photography Gallery</h1>
       <p className="select-none">
         I started taking photos with my first Nikon DSLR since 2010. I love to
         travel and read history.
