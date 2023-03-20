@@ -9,9 +9,9 @@ export const About = (): JSX.Element => {
         title: "About - Roland Shum",
       }}
     >
-      <div>
+      <div className="select-none">
         <h1>About me</h1>
-        <div>
+        <div className="py-3">
           <Image
             alt={`brussels`}
             src={`/images/brussels-2023.jpeg`}
@@ -21,16 +21,12 @@ export const About = (): JSX.Element => {
           />
         </div>
         <p>
-          Based in Tallinn, Estonia. Raised in Hong Kong. Studied in
-          Israel and Estonia.
+          Based in Tallinn, Estonia. Raised in Hong Kong. Studied in Israel and
+          Estonia.
         </p>
         <p>Active in software development, Machine Learning and XR.</p>
-        <p>
-          Blogging helps me to reflect and learn.
-        </p>
-        <p>
-          Welcome to any small talks and beers 🍻
-        </p>
+        <p>Blogging helps me to reflect and learn.</p>
+        <p>Welcome to any small talks and beers 🍻</p>
       </div>
     </Layout>
   );
