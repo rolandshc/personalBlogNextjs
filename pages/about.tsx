@@ -11,27 +11,26 @@ export const About = (): JSX.Element => {
     >
       <div>
         <h1>About me</h1>
+        <div>
+          <Image
+            alt={`brussels`}
+            src={`/images/brussels-2023.jpeg`}
+            width={300}
+            height={300}
+            priority
+          />
+        </div>
         <p>
-          Currently based in Tallinn, Estonia. Raised in Hong Kong. Studied in
+          Based in Tallinn, Estonia. Raised in Hong Kong. Studied in
           Israel and Estonia.
         </p>
-        <p>Active in software development, AIML and XR.</p>
+        <p>Active in software development, Machine Learning and XR.</p>
         <p>
           Blogging helps me to reflect and learn.
         </p>
         <p>
-          A beliver. A front liner. Tanky and try-hard.
+          Welcome to any small talks and beers 🍻
         </p>
-        <div>
-          <p>Summer in Rhodes, Greece @2022</p>
-          <Image
-            alt={`rhodes`}
-            src={`/images/rhodes-2022.JPG`}
-            width={1350}
-            height={900}
-            priority
-          />
-        </div>
       </div>
     </Layout>
   );

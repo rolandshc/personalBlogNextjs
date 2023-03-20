@@ -15,6 +15,9 @@
   a {
     @apply text-blue-500 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300;
   }
+  .filter button {
+    @apply border border-blue-500 hover:border-transparent bg-transparent focus:bg-blue-700 focus:text-white hover:bg-blue-700 hover:text-white text-gray-700 dark:text-white font-bold py-2 px-3 mx-1 rounded-full;
+  }
 }
 
 /* Post styles */
@@ -103,6 +106,9 @@ pre::-webkit-scrollbar {
 pre {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+ul{list-style-type:square
 }
 
 /* Remark Styles */

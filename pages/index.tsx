@@ -63,7 +63,7 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
       <p>Welcome to my personal site. Built with NextJs.</p>
       <a
         href="https://github.com/rolandshc/personalBlogNextjs"
-        className="inline-block px-4 py-2 rounded-md text-white dark:text-white bg-gray-600 hover:bg-gray-700 hover:text-white dark:hover:text-white"
+        className="inline-block px-4 py-2 rounded-md text-white dark:text-white bg-gray-600 hover:bg-gray-700 hover:text-white dark:hover:text-white" target="_blank"
       >
         source code
       </a>
@@ -71,12 +71,12 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
 
       <h2 className="pt-8">My Blog Posts</h2>
       <br />
-      <div>
-        <a>
+      <div className="filter">
+        
           <button className="mb-2 pr-3" id="All" onClick={handleClick}>
             All
           </button>
-        </a>
+        
         {(() => {
           return tagArr.map((tagId) => (
             <a key={tagId}>

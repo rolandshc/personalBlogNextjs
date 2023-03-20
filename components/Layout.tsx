@@ -78,7 +78,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
             </a>
           </Link>
           <br />
-          Copyright © 2022
+          Copyright © 2023
           <br />
           <span className="text-gray-200 dark:text-gray-800 ">
             So we do not focus on what is seen, but on what is unseen. For what
