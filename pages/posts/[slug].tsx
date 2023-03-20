@@ -1,21 +1,21 @@
-import { format, parseISO } from 'date-fns';
-import fs from 'fs';
-import matter from 'gray-matter';
+import { format, parseISO } from "date-fns";
+import fs from "fs";
+import matter from "gray-matter";
 // import mdxPrism from 'mdx-prism';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import path from 'path';
-import React from 'react';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeSlug from 'rehype-slug';
-import Layout, { WEBSITE_HOST_URL } from '../../components/Layout';
-import { MetaProps } from '../../types/layout';
-import { PostType } from '../../types/post';
-import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
+import { GetStaticPaths, GetStaticProps } from "next";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import path from "path";
+import React from "react";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+import Layout, { WEBSITE_HOST_URL } from "../../components/Layout";
+import { MetaProps } from "../../types/layout";
+import { PostType } from "../../types/post";
+import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -38,13 +38,12 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
     description: frontMatter.description,
     image: `${WEBSITE_HOST_URL}${frontMatter.image}`,
     date: frontMatter.date,
-    type: 'article',
+    type: "article",
     tag: frontMatter.tag,
   };
 
-
   let tagArr = [];
-  let tag = frontMatter.tag
+  let tag = frontMatter.tag;
   if (tag.includes(",")) {
     let temp = "";
     let tempTags = [];
@@ -61,12 +60,9 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         tempTags.push(temp);
       }
     }
-  }
-  else
-  {
+  } else {
     tagArr.push(tag);
   }
-
 
   return (
     <Layout customMeta={customMeta}>
@@ -75,19 +71,22 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           {frontMatter.title}
         </h1>
         <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
-          {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
-          <br/>
+          {format(parseISO(frontMatter.date), "MMMM dd, yyyy")}
+          <br />
           {/* {frontMatter.tag} */}
           {(() => {
-          return tagArr.map((tagId) => (
-            <Link key={tagId} href={{ pathname: "/", query: {tag: tagId}}}>
-            <span className="filter">
-            <button className="mb-2 pr-3">{tagId} </button>
-            </span>
-            </Link>
-          ));
-        })()}
-        </p> 
+            return tagArr.map((tagId) => (
+              <Link
+                key={tagId}
+                href={{ pathname: "/blog", query: { tag: tagId } }}
+              >
+                <span className="filter">
+                  <button className="mb-2 pr-3">{tagId} </button>
+                </span>
+              </Link>
+            ));
+          })()}
+        </p>
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
@@ -105,7 +104,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [require('remark-code-titles')],
+      remarkPlugins: [require("remark-code-titles")],
       // rehypePlugins: [mdxPrism, rehypeSlug, rehypeAutolinkHeadings],
     },
     scope: data,
@@ -122,7 +121,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = postFilePaths
     // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ''))
+    .map((path) => path.replace(/\.mdx?$/, ""))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }));
 
