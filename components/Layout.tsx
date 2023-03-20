@@ -32,7 +32,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
       />
       <header>
         <div className="max-w-5xl px-8 mx-auto">
-          <div className="flex items-center justify-between py-6">
+          <div className="flex items-center justify-between py-6 absolute">
             <Navigation />
           </div>
         </div>
@@ -45,7 +45,9 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
       height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
-        <div className="max-w-5xl px-8 py-4 mx-auto">{children}</div>
+        <div className="max-w-5xl px-8 pt-72 lg:pt-60 md:pt-48 sm:pt-40 mx-auto">
+          {children}
+        </div>
       </main>
       <footer className="select-none py-8">
         <div className="max-w-5xl px-8 mx-auto text-gray-600 dark:text-gray-400">
