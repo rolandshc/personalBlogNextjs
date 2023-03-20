@@ -16,11 +16,19 @@ export const Gallery = (): JSX.Element => {
       <h2 className="py-3">Photography Gallery</h2>
       <p>
         I started taking photos with my first Nikon DSLR camera since 2010. I
-        travel and read history. Since 2019, I have been based in Tallinn.
+        love to travel and read history.
       </p>
       <p>
-        I would implement the categories functionality here. Pending to update.
-      </p>
+        I would implement a category functionality here. Pending to update.
+        <br/>Current Gears below..
+        <br/><br/>Body: Sony a7 III
+        </p>
+        Lenses:
+      <ul className="px-4">
+        <li>Lvoigtlander 15mm f4.5 iii</li>
+        <li>Sony FE 24-105mm F4 G OSS</li>
+        <li>Sony FE 85mm F1.8</li>
+        </ul>
       <GridGallery images={images} />
     </Layout>
   );
