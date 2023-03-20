@@ -3,14 +3,13 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const Navigation = (): JSX.Element => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 ">
-      <div className="block sm:inline-block md:py-5 py-3">
-        <a className="text-gray-900 dark:text-white" href="/">
-          Roland Shum&nbsp;
-        </a>
-        <ThemeSwitch />
-      </div>
+    <nav className="flex items-center justify-between flex-wrap">
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div className="block sm:inline-block md:py-5 py-3 pr-8">
+          <a className="text-gray-900 dark:text-white font-bold" href="/">
+            ROLAND SHUM&nbsp;
+          </a>
+        </div>
         <div className="text-sm lg:flex-grow">
           <a
             href="/about"
@@ -32,6 +31,7 @@ const Navigation = (): JSX.Element => {
           </a>
         </div>
       </div>
+      <ThemeSwitch />
     </nav>
   );
 };
