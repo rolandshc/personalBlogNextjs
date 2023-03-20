@@ -4,6 +4,7 @@ import Head from "./Head";
 import Navigation from "./Navigation";
 import Image from "next/image";
 import Script from "next/script";
+import ThemeSwitch from "./ThemeSwitch";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -32,8 +33,11 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
       />
       <header>
         <div className="max-w-5xl px-8 mx-auto">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <Navigation />
+            <div className="float-right">
+              <ThemeSwitch />
+            </div>
           </div>
         </div>
       </header>
