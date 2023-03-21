@@ -33,11 +33,12 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       )}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: structuredData }}
         key="item-jsonld"
       />
     </NextHead>
   );
 };
+// JSON.stringify
 
 export default Head;
