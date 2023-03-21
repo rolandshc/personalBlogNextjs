@@ -2,6 +2,7 @@ import NextHead from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import { MetaProps } from "../types/layout";
+import Script from "next/script";
 
 export const WEBSITE_HOST_URL = "https://rolandshum.com";
 
@@ -31,7 +32,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       {meta.date && (
         <meta property="article:published_time" content={meta.date} />
       )}
-      <script
+      <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         key="item-jsonld"
