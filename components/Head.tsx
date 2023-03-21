@@ -15,7 +15,23 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
     type: "website",
     ...customMeta,
   };
-  const structuredData = `{"@context": "http://schema.org","@type": "Person","familyName": "Shum","givenName": "Roland","worksFor": "https://rolandshum.com/","jobTitle": "Software Engineer","alumniOf": "https://ut.ee/","image": "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75","gender": "Male","sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc","https://rolandshum.com/"]}`;
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    familyName: "Shum",
+    givenName: "Roland",
+    worksFor: "https://rolandshum.com/",
+    jobTitle: "Software Engineer",
+    alumniOf: "https://ut.ee/",
+    image:
+      "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75",
+    gender: "Male",
+    sameAs: [
+      "https://www.linkedin.com/in/rolandshum/",
+      "https://github.com/rolandshc",
+      "https://rolandshum.com/",
+    ],
+  };
 
   return (
     <NextHead>
@@ -33,12 +49,11 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       )}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: structuredData }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         key="item-jsonld"
       />
     </NextHead>
   );
 };
-// JSON.stringify
 
 export default Head;
