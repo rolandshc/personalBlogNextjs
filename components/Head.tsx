@@ -15,8 +15,6 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
     type: "website",
     ...customMeta,
   };
-  const structuredData = `{"@context": "http://schema.org","@type": "Person","familyName": "Shum","givenName": "Roland","worksFor": "https://rolandshum.com/","jobTitle": "Software Engineer","alumniOf": "https://ut.ee/","image": "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75","gender": "http://schema.org/Male","sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc","https://rolandshum.com/"],"alumniOf":{"@type": "EducationalOrganization","name": "University of Tartu","url":"https://ut.ee/et"}}`;
-
   return (
     <NextHead>
       <title>{meta.title}</title>
@@ -35,7 +33,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: `
-        {"@context": "http://schema.org","@type": "Person","familyName": "Shum","givenName": "Roland","worksFor": "https://rolandshum.com/","jobTitle": "Software Engineer","alumniOf": "https://ut.ee/","image": "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75","gender": "http://schema.org/Male","sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc","https://rolandshum.com/"],"alumniOf":{"@type": "EducationalOrganization","name": "University of Tartu","url":"https://ut.ee/et"}}
+        {"@context": "http://schema.org","@type": "Person","familyName": "Shum","givenName": "Roland","worksFor": "https://rolandshum.com/","jobTitle": "Software Engineer","alumniOf": {"@type": "EducationalOrganization","name": "University of Tartu","url":"https://ut.ee/et"},"image": "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75","gender": "http://schema.org/Male","sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc","https://rolandshum.com/"]}
         `,
         }}
         key="item-jsonld"
