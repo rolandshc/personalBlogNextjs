@@ -1,38 +1,21 @@
-import NextHead from 'next/head';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { MetaProps } from '../types/layout';
+import NextHead from "next/head";
+import { useRouter } from "next/router";
+import React from "react";
+import { MetaProps } from "../types/layout";
 
-export const WEBSITE_HOST_URL = 'https://rolandshum.com';
+export const WEBSITE_HOST_URL = "https://rolandshum.com";
 
 const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
   const router = useRouter();
   const meta: MetaProps = {
-    title: 'Roland Shum',
+    title: "Roland Shum",
     description:
-      'I am Roland Shum. This is my personal site, sharing my latest findings and thoughts.',
+      "I am Roland Shum. This is my personal site, sharing my latest findings and thoughts.",
     image: `${WEBSITE_HOST_URL}/images/site-preview.png`,
-    type: 'website',
+    type: "website",
     ...customMeta,
   };
-  const structuredData = `
-  {
-    "@context": "http://schema.org",
-    "@type": "Person",
-    "familyName": "Shum",
-    "givenName": "Roland",
-    "worksFor": "https://rolandshum.com/",
-    "jobTitle": "Software Engineer",
-    "alumniOf": "https://ut.ee/",
-    "image": "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75",
-    "gender": "http://schema.org/Male",
-    "sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc",https://rolandshum.com/],
-    "alumniOf":{
-    "@type": "EducationalOrganization",
-    "name": "University of Tartu",
-    "url":"https://ut.ee/et"}
-  }
-  `
+  const structuredData = `{"@context": "http://schema.org","@type": "Person","familyName": "Shum","givenName": "Roland","worksFor": "https://rolandshum.com/","jobTitle": "Software Engineer","alumniOf": "https://ut.ee/","image": "https://rolandshum.com/_next/image?url=%2Fimages%2Fbrussels-2023.jpeg&w=640&q=75","gender": "Male","sameAs": ["https://www.linkedin.com/in/rolandshum/","https://github.com/rolandshc","https://rolandshum.com/"]}`;
 
   return (
     <NextHead>
@@ -49,10 +32,10 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
         <meta property="article:published_time" content={meta.date} />
       )}
       <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      key="item-jsonld"
-    />
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        key="item-jsonld"
+      />
     </NextHead>
   );
 };
