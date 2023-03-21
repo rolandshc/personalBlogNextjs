@@ -5,15 +5,9 @@ date: "2022-07-25"
 tag: Development,CICD,Python
 ---
 
-### AWS Lambda function logging with Cloudwatch
-
-
-
 ### AWS Lambda Pricing
 
-The AWS Lambda free tier includes one million free requests per month and 400,000 GB-seconds of compute time per month, usable for functions powered by both x86, and Graviton2 processors, in aggregate. 
-
-
+The AWS Lambda free tier includes one million free requests per month and 400,000 GB-seconds of compute time per month, usable for functions powered by both x86, and Graviton2 processors, in aggregate.
 
 <Image
   alt={`circleci plugins`}
@@ -22,8 +16,6 @@ The AWS Lambda free tier includes one million free requests per month and 400,00
   height={564}
   priority
 />
-
-
 
 ```
  steps:
@@ -43,8 +35,6 @@ The AWS Lambda free tier includes one million free requests per month and 400,00
               issue_regexp: '[A-Z]{2,30}[0-9]-[0-9]+'
               scan_commit_body: true
 ```
-
-
 
 #### Jira view
 
@@ -69,5 +59,16 @@ Still, it was pretty smooth since the CircleCI community is open source.
 
 Recommended Reading:
 
-<a href="https://www.thelambdablog.com/filtering-cloudwatch-logs-by-loggroups-and-logstreams-and-reading-them-using-python-and-the-boto3-sdk" target="_blank">Filtering Cloudwatch Logs using Python and boto3 SDK</a><br/>
-<a href="https://www.atlassian.com/software/jira/guides/developers/ci-cd" target="_blank">How to use Jira for CICD - Atlassian</a>
+<a
+  href="https://www.thelambdablog.com/filtering-cloudwatch-logs-by-loggroups-and-logstreams-and-reading-them-using-python-and-the-boto3-sdk"
+  target="_blank"
+>
+  Filtering Cloudwatch Logs using Python and boto3 SDK
+</a>
+<br />
+<a
+  href="https://www.atlassian.com/software/jira/guides/developers/ci-cd"
+  target="_blank"
+>
+  How to use Jira for CICD - Atlassian
+</a>
