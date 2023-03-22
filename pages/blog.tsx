@@ -8,11 +8,11 @@ import { PostType } from "../types/post";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-type IndexProps = {
+type BlogProps = {
   posts: PostType[];
 };
 
-export const Blog = ({ posts }: IndexProps): JSX.Element => {
+export const Blog = ({ posts }: BlogProps): JSX.Element => {
   const router = useRouter();
   let routeData;
   if (typeof router.query.tag !== "undefined") {
