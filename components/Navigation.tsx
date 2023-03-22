@@ -1,5 +1,4 @@
 import React from "react";
-import ThemeSwitch from "./ThemeSwitch";
 
 const Navigation = (): JSX.Element => {
   return (
