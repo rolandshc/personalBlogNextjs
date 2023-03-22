@@ -44,10 +44,11 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       disableTransitionOnChange
     >
       <CookieConsent
+        flipButtons
         enableDeclineButton
         buttonText="Accept"
-        declineButtonText="Reject"
-        buttonStyle={{ background: "rgb(96 165 250)" }}
+        declineButtonText="No, thanks"
+        buttonStyle={{ background: "#ffffff" }}
         declineButtonStyle={{ background: "transparent" }}
         onAccept={() => {
           setConsent(true);
@@ -56,9 +57,15 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           setConsent(false);
         }}
       >
-        I use Google Analytics 4 to analyze website traffic and improve your
-        browsing experience. By clicking "Accept" you consent to the use of
-        these technologies on this website.
+        I use Google Analytics 4 on this site to analyze website traffic and
+        enhance your user experience
+        <br /> By clicking the Accept button, you agree to us doing so.{" "}
+        <a
+          href="https://support.google.com/analytics/answer/12017362?hl=en"
+          target="_blank"
+        >
+          More info
+        </a>
       </CookieConsent>
       <Component {...pageProps} />
     </ThemeProvider>
