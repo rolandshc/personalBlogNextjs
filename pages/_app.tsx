@@ -59,7 +59,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       >
         I use Google Analytics 4 on this site to analyze website traffic and
         enhance your user experience
-        <br /> By clicking the Accept button, you agree to us doing so.{" "}
+        <br /> By clicking the Accept button, you agree to me doing so.{" "}
         <a
           href="https://support.google.com/analytics/answer/12017362?hl=en"
           target="_blank"
