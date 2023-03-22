@@ -70,7 +70,6 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           />
         </script> */}
         <div className="max-w-5xl px-8 mx-auto py-8">{children}</div>
-        <h1>{consent ? "CONSENT" : "NOT CONSENT"}</h1>
       </main>
       <CookieConsent
         enableDeclineButton
