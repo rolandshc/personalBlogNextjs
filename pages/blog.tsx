@@ -5,7 +5,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 type BlogProps = {
@@ -23,13 +23,26 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
 
   const [tag, setTag] = useState<string>(routeData);
 
+  useEffect(() => {
+    {
+      if (document.getElementById(tag)) {
+        document.getElementById(tag).style.backgroundColor = "rgb(29 78 216)";
+        return () => {
+          if (document.getElementById(tag)) {
+          document.getElementById(tag).style.backgroundColor = "transparent";
+          }
+        };
+      }
+    }
+  }, [tag]);
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const id = e.currentTarget.id;
     setTag(id);
   };
 
   let renderPosts = posts;
-  let renderPostsNum;
+  let renderPostsNum = 100;
   let tagMap = posts.map((post) => post.tag);
   let tagArr = [];
 
@@ -79,9 +92,7 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
       </div>
 
       {(() => {
-        if (tag == "All") {
-          renderPostsNum = 100;
-        } else {
+        if (tag != "All") {
           renderPosts = renderPosts.filter((post1) => post1.tag.includes(tag));
           renderPostsNum = 10;
         }
