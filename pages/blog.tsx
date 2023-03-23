@@ -29,7 +29,7 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
         document.getElementById(tag).style.backgroundColor = "rgb(29 78 216)";
         return () => {
           if (document.getElementById(tag)) {
-          document.getElementById(tag).style.backgroundColor = "transparent";
+            document.getElementById(tag).style.backgroundColor = "transparent";
           }
         };
       }
@@ -51,20 +51,19 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
 
     if (tag.includes(",")) {
       let temp = "";
-      let tempTags = [];
       for (let index = 0; index < tag.length; index++) {
         if (tag[index] === ",") {
           tagArr.push(temp);
-          tempTags.push(temp);
           temp = "";
         } else {
           temp += tag[index];
         }
         if (index === tag.length - 1) {
           tagArr.push(temp);
-          tempTags.push(temp);
         }
       }
+    } else {
+      tagArr.push(tag);
     }
   }
 
