@@ -69,6 +69,7 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
 
   let tagSet = new Set(tagArr);
   tagArr = Array.from(tagSet);
+  tagArr.sort();
 
   return (
     <Layout>
