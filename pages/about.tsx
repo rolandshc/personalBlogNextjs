@@ -26,7 +26,7 @@ export const About = (): JSX.Element => {
         </p>
         <p>Active in software development, Machine Learning and XR.</p>
         <p>Blogging helps me to reflect and learn.</p>
-        <p>Welcome to any small talks and beers 🍻</p>
+        <p>Welcome to any small talks and beer 🍻</p>
       </div>
     </Layout>
   );
