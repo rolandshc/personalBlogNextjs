@@ -23,6 +23,8 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
 
   const [tag, setTag] = useState<string>(routeData);
 
+  routeData = null;
+
   useEffect(() => {
     {
       if (document.getElementById(tag)) {
@@ -37,8 +39,9 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
   }, [tag]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const id = e.currentTarget.id;
+    let id = e.currentTarget.id;
     setTag(id);
+    id = null;
   };
 
   let renderPosts = posts;
@@ -62,6 +65,7 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
           tagArr.push(temp);
         }
       }
+      temp = null;
     } else {
       tagArr.push(tag);
     }
