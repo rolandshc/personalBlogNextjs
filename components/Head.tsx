@@ -10,8 +10,8 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
   const meta: MetaProps = {
     title: "Roland Shum",
     description:
-      "I am Roland Shum. This is my personal site, sharing my latest findings and thoughts.",
-    image: `${WEBSITE_HOST_URL}/images/site-preview.png`,
+      "Hello I am Roland Shum. A software developer based in Tallinn, Estonia. This is my personal website sharing my research, hobbies and thoughts.",
+    image: `${WEBSITE_HOST_URL}/images/site-preview.jpeg`,
     type: "website",
     ...customMeta,
   };
@@ -22,7 +22,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       <meta property="og:url" content={`${WEBSITE_HOST_URL}${router.asPath}`} />
       <link rel="canonical" href={`${WEBSITE_HOST_URL}${router.asPath}`} />
       <meta property="og:type" content={meta.type} />
-      <meta property="og:site_name" content="Roland Shum - Personal Site" />
+      <meta property="og:site_name" content="Roland Shum" />
       <meta property="og:description" content={meta.description} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:image" content={meta.image} />

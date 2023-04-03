@@ -8,6 +8,7 @@ import CookieConsent from "react-cookie-consent";
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const [consent, setConsent] = useState(false);
   useEffect(() => {
+    let abortController = new AbortController();
     if (consent) {
       // googletagmanager script
       const s = document.createElement("script");
@@ -32,6 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       return () => {
         document.getElementsByTagName("head")[0].removeChild(s);
         document.getElementsByTagName("body")[0].removeChild(iframe);
+        abortController.abort();
       };
     }
   }, [consent]);
