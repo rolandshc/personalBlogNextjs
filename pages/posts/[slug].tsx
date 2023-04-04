@@ -80,8 +80,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
                 key={tagId}
                 href={{ pathname: "/blog", query: { tag: tagId } }}
               >
-                <span className="filter">
-                  <button className="mb-2 pr-3">{tagId} </button>
+                <span>
+                  <button className="filter">{tagId} </button>
                 </span>
               </Link>
             ));
