@@ -23,15 +23,15 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
 
   const [tag, setTag] = useState<string>(routeData);
 
-  routeData = null;
+  // routeData = null;
 
   useEffect(() => {
     {
       if (document.getElementById(tag)) {
-        document.getElementById(tag).style.backgroundColor = "rgb(29 78 216)";
+        document.getElementById(tag).className = "filter-selected";
         return () => {
           if (document.getElementById(tag)) {
-            document.getElementById(tag).style.backgroundColor = "transparent";
+            document.getElementById(tag).className = "filter";
           }
         };
       }
@@ -79,15 +79,15 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
     <Layout>
       <h1 className="select-none">Blog Posts</h1>
       <br />
-      <div className="filter">
-        <button className="mb-2 pr-3" id="All" onClick={handleClick}>
+      <div className="py-2">
+        <button className="mb-2 pr-3 filter" id="All" onClick={handleClick}>
           All
         </button>
 
         {(() => {
           return tagArr.map((tagId) => (
             <span key={tagId}>
-              <button className="mb-2 pr-3" id={tagId} onClick={handleClick}>
+              <button className="mb-2 pr-3 filter" id={tagId} onClick={handleClick}>
                 {tagId}
               </button>
             </span>
