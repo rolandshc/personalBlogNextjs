@@ -29,6 +29,9 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
     {
       if (document.getElementById(tag)) {
         document.getElementById(tag).className = "filter-selected";
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
         return () => {
           if (document.getElementById(tag)) {
             document.getElementById(tag).className = "filter";
