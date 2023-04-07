@@ -23,24 +23,30 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
 
   const [tag, setTag] = useState<string>(routeData);
 
-  // routeData = null;
-
   useEffect(() => {
-    {
-      if (document.getElementById(tag)) {
-        document.getElementById(tag).className = "filter-selected";
-        return () => {
-          if (document.getElementById(tag)) {
-            document.getElementById(tag).className = "filter";
-          }
-        };
-      }
+    let abortController = new AbortController();
+    if (document.getElementById(tag)) {
+      document.getElementById(tag).className = "filter-selected";
+      return () => {
+        if (document.getElementById(tag)) {
+          document.getElementById(tag).className = "filter";
+          abortController.abort();
+        }
+      };
     }
   }, [tag]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (document.getElementById(tag)) {
+      document.getElementById(tag).className = "filter";
+    }
     let id = e.currentTarget.id;
     setTag(id);
+    {
+      if (document.getElementById(id)) {
+        document.getElementById(id).className = "filter-selected";
+      }
+    }
     id = null;
   };
 
@@ -87,7 +93,11 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
         {(() => {
           return tagArr.map((tagId) => (
             <span key={tagId}>
-              <button className="mb-2 pr-3 filter" id={tagId} onClick={handleClick}>
+              <button
+                className="mb-2 pr-3 filter"
+                id={tagId}
+                onClick={handleClick}
+              >
                 {tagId}
               </button>
             </span>
