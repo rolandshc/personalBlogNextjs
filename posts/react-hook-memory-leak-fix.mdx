@@ -1,0 +1,79 @@
+---
+title: React Hook Memory Leak Fix
+description: An easy fix for system optimzation for React Hooks
+date: "2023-04-07"
+tag: Web
+---
+
+While studying the syllabus for the ISTQB Advance Level TTA certificate, I revisited the static and dynamic analysis for memory leaks.
+Hence, I tried to practise the methods by analyzing and improving the performance this web blog.
+
+I tried to monitor the memory performances of different pages of this website.
+
+<Image
+  alt={`Memory Monitoring`}
+  src={`/images/chrome-memory-monitoring.png`}
+  width={1200}
+  height={600}
+  priority
+/>
+
+The `Shallow Size` and `Retained Size` are quite small in average for all pages. The only 2 outstanding pages are the homepage and the Blog page, where the `UseEffect` hooks are used.
+
+It makes sense because the code inside `UseEffect` runs on every render so it could provide functionalities like DOM update, and data fetching in client side.
+
+I did a little bit google to learn the best practice and found this useful article <a href="https://medium.com/technology-hits/how-to-fix-memory-leak-issue-in-react-js-using-hook-a5ecbf9becf8"  target="_blank">How To Fix Memory Leak Issue In React Js Using Hook</a>.
+
+And then I added the `AbortController` to the hooks I used in the 2 pages. There is a significant memory usage drop for the homepage:
+
+Before the fix:
+
+<Image
+  alt={`Memory Usage Before Fix`}
+  src={`/images/memory-leak-before-fix.png`}
+  width={350}
+  height={150}
+  priority
+/>
+
+After the fix:
+
+<Image
+  alt={`Memory Usage After Fix`}
+  src={`/images/memory-leak-after-fix.png`}
+  width={350}
+  height={150}
+  priority
+/>
+
+The result looks awesome with this little trick. Eventhough it is certain that this little small optimization would never be a matter for this website, system performance caused by memory leaks would still be
+an issue for those safety critical software in aerospacing, automotive and medical technology. Many modern frameworks include good-to-go garbage collection by default but still, code speaks for itself.
+
+<iframe
+  src="https://giphy.com/embed/l4FGvN3n3IQi4xZNS"
+  width="257"
+  height="145"
+  frameBorder="0"
+  class="giphy-embed"
+  allowFullScreen
+></iframe>
+<p>
+  <a
+    href="https://giphy.com/gifs/siliconvalleyhbo-silicon-valley-hbo-l4FGvN3n3IQi4xZNS"
+    target="_blank"
+  >
+    via GIPHY
+  </a>
+</p>
+<br/>
+Recommended Reading:
+
+<a
+  href="https://www.geeksforgeeks.org/what-is-memory-leak-how-can-we-avoid/"
+  target="_blank"
+>
+  What is Memory Leak? How can we avoid?
+</a>
+<a href="https://istqb-glossary.page/memory-leak/" target="_blank">
+  ISTQB Glossary - Memory Leak
+</a>
