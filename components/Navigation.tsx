@@ -22,12 +22,6 @@ const Navigation = (): JSX.Element => {
           >
             Blog 📝
           </a>
-          <a
-            href="/gallery"
-            className="block sm:inline-block text-gray-900 dark:text-white mr-8 md:py-5 py-3 px-5"
-          >
-            Photography 📷
-          </a>
         </div>
       </div>
     </nav>
