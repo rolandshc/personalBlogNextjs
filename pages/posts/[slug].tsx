@@ -73,6 +73,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
           {format(parseISO(frontMatter.date), "MMMM dd, yyyy")}
           <br />
+          <br />
           {/* {frontMatter.tag} */}
           {(() => {
             return tagArr.map((tagId) => (
