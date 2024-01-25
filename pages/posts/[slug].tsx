@@ -16,6 +16,7 @@ import Layout, { WEBSITE_HOST_URL } from "../../components/Layout";
 import { MetaProps } from "../../types/layout";
 import { PostType } from "../../types/post";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import SocialShare from "../../components/SocialShare";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -30,9 +31,12 @@ const components = {
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: PostType;
+  slug: String;
 };
 
-const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
+
+const PostPage = ({ source, frontMatter, slug }: PostPageProps): JSX.Element => {
+  const postUrl = `${WEBSITE_HOST_URL}/posts/${slug}`;
   const customMeta: MetaProps = {
     title: `${frontMatter.title} - Roland Shum`,
     description: frontMatter.description,
@@ -71,9 +75,11 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           {frontMatter.title}
         </h1>
         <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
+          <span>
           {format(parseISO(frontMatter.date), "MMMM dd, yyyy")}
-          <br />
-          <br />
+          </span>
+          <SocialShare shareUrl={postUrl} title={frontMatter.title} />
+          Tag(s):
           {/* {frontMatter.tag} */}
           {(() => {
             return tagArr.map((tagId) => (
@@ -97,7 +103,9 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
+  const slug = params.slug;
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
@@ -115,6 +123,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug: slug,
     },
   };
 };
