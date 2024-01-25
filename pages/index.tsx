@@ -6,8 +6,8 @@ export const Index = (): JSX.Element => {
     <Layout>
       <div className="typewriter">
         <h1>
-          <code className="text-3xl sm:text-3xl md:text-6xl lg:text-9xl select-none">
-            Hello World
+          <code className="text-xl sm:text-xl md:text-3xl lg:text-6xl select-none">
+          新しい时代を作るのは老人ではない
           </code>
         </h1>
       </div>

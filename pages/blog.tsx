@@ -86,7 +86,8 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
       <h1 className="select-none">Blog Posts</h1>
       <br />
       <div className="py-2">
-        <button className="mb-2 pr-3 filter" id="All" onClick={handleClick}>
+        Tags: 
+        <button className="filter" id="All" onClick={handleClick}>
           All
         </button>
 
@@ -94,7 +95,7 @@ export const Blog = ({ posts }: BlogProps): JSX.Element => {
           return tagArr.map((tagId) => (
             <span key={tagId}>
               <button
-                className="mb-2 pr-3 filter"
+                className="filter"
                 id={tagId}
                 onClick={handleClick}
               >
