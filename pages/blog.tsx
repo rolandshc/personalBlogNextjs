@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import { getAllPosts } from '../lib/api';
 import { PostType } from '../types/post';
 import { GetStaticProps } from 'next';
+import Pagination from '../components/Pagination';
 
 type BlogProps = {
   posts: PostType[];
@@ -16,6 +17,8 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
   const initialTag = router.query.tag ? router.query.tag as string : 'All';
   const [selectedTag, setSelectedTag] = useState<string>(initialTag);
   const [tagList, setTagList] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const postsPerPage = 3;
 
   useEffect(() => {
     const tags = new Set<string>();
@@ -25,17 +28,17 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
     setTagList(['All', ...Array.from(tags).sort()]);
   }, [posts]);
 
-  useEffect(() => {
-    return () => {
-      setSelectedTag('All');
-    };
-  }, []);
-
   const handleTagClick = (newTag: string) => {
     setSelectedTag(newTag);
+    setCurrentPage(1);
   };
 
   const filteredPosts = selectedTag === 'All' ? posts : posts.filter(post => post.tag.includes(selectedTag));
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
     <Layout>
@@ -53,16 +56,16 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
         ))}
       </div>
 
-      {filteredPosts.slice(0, selectedTag === 'All' ? 100 : 10).map(post => (
+      {currentPosts.map(post => (
         <article key={post.slug} className="mt-12 select-none">
           <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
             {format(parseISO(post.date), 'MMMM dd, yyyy')}
           </p>
-          <h1 className="mb-1 text-xl">
+          <h2 className="mb-1 text-xl">
             <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
               <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">{post.title}</a>
             </Link>
-          </h1>
+          </h2>
           <p className="mb-1 text-gray-700 dark:text-gray-400 text-xs">
             {post.tag}
           </p>
@@ -71,6 +74,8 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
           </p>
         </article>
       ))}
+
+      <Pagination postsPerPage={postsPerPage} totalPosts={filteredPosts.length} paginate={paginate} />
     </Layout>
   );
 };
