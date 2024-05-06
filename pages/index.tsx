@@ -6,8 +6,8 @@ export const Index = (): JSX.Element => {
     <Layout>
       <div className="typewriter">
         <h1>
-          <code className="text-sm sm:text-sm md:text-3sm lg:text-6sm select-none">
-          All things are so very uncertain, and that's exactly what makes me feel reassured.
+          <code className="text-xs sm:text-xs md:text-3xs lg:text-6xs select-none">
+          All things are so very uncertain 😇
           </code>
         </h1>
       </div>
