@@ -6,8 +6,8 @@ export const Index = (): JSX.Element => {
     <Layout>
       <div className="typewriter">
         <h1>
-          <code className="text-xl sm:text-xl md:text-3xl lg:text-6xl select-none">
-          新しい时代を作るのは老人ではない
+          <code className="text-sm sm:text-sm md:text-3sm lg:text-6sm select-none">
+          All things are so very uncertain, and that's exactly what makes me feel reassured.
           </code>
         </h1>
       </div>
@@ -26,13 +26,6 @@ export const Index = (): JSX.Element => {
         </a>
         .
       </p>
-      <a
-        href="https://github.com/rolandshc/personalBlogNextjs"
-        className="inline-block px-4 py-2 rounded-md text-white dark:text-white bg-gray-600 hover:bg-gray-700 hover:text-white dark:hover:text-white"
-        target="_blank"
-      >
-        source code
-      </a>
       <br />
     </Layout>
   );

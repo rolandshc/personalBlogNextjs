@@ -61,10 +61,9 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           </a>
           <br />
           <span className="text-gray-500 ">
-            So we do not focus on what is seen, but on what is unseen. For what
-            is seen is temporary, but what is unseen is eternal.
+          All things are so very uncertain, and that's exactly what makes me feel reassured.
             <br />
-            (2 Corinthians 4:18)
+            Tove Jansson
           </span>
         </div>
       </footer>
