@@ -14,18 +14,19 @@ export const About = (): JSX.Element => {
         <div className="py-3">
           <Image
             alt={`brussels`}
-            src={`/images/brussels-2023.jpeg`}
-            width={300}
+            src={`/images/rhodes-2022.jpg`}
+            width={400}
             height={300}
             priority
           />
         </div>
         <p>
           Based in Tallinn, Estonia. Raised in Hong Kong. Studied in Israel and
-          Estonia.
+          Estonia 🇪🇪
         </p>
-        <p>Active in software development, Machine Learning and XR.</p>
-        <p>Blogging helps me to reflect and learn.</p>
+        <p>Passionate about software product quality 💻</p>
+        <p>Spatial computing, traveling and gaming as my hobbies 🚀</p>
+        <p>Blogging helps me to reflect and learn ✍🏻</p>
         <p>Welcome to any small talks and beer 🍻</p>
       </div>
     </Layout>
