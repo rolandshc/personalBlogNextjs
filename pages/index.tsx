@@ -13,15 +13,15 @@ export const Index = (): JSX.Element => {
       </div>
       <p className="py-5 sm:py-20 select-none ">
         Welcome to my personal blog. Built with{" "}
-        <a href="https://nextjs.org/" target="_blank">
+        <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
           NextJS
         </a>
         ,{" "}
-        <a href="https://tailwindcss.com/" target="_blank">
+        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
           Tailwindcss
         </a>
         &nbsp;and&nbsp;
-        <a href="https://www.typescriptlang.org/" target="_blank">
+        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
           TypeScript
         </a>
         .
