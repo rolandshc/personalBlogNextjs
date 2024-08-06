@@ -1,34 +1,68 @@
 import React from "react";
+import Link from "next/link";
 import Layout from "../components/Layout";
+import { format, parseISO } from "date-fns";
+import { GetStaticProps } from "next";
+import { getAllPosts } from "../lib/api";
+import { PostType } from "../types/post";
 
-export const Index = (): JSX.Element => {
+type IndexProps = {
+  recentPosts: PostType[];
+};
+
+export const Index = ({ recentPosts }: IndexProps): JSX.Element => {
   return (
     <Layout>
-      <div className="typewriter">
-        <h1>
-          <code className="text-xs sm:text-xs md:text-3xs lg:text-6xs select-none">
-          All things are so very uncertain 😇
-          </code>
-        </h1>
-      </div>
-      <p className="py-5 sm:py-20 select-none ">
-        Welcome to my personal blog. Built with{" "}
-        <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
-          NextJS
-        </a>
-        ,{" "}
-        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
-          Tailwindcss
-        </a>
-        &nbsp;and&nbsp;
-        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
-          TypeScript
-        </a>
-        .
+      {/* Intro section */}
+      <p className="py-5 sm:py-10 md:py-15 lg:py-20 xl:py-25 select-none">
+        Ciao! I'm Roland, a software developer, tester, immersive experience
+        creator, and a cat slave 🐈.
+        <br />
+        My journey in tech has taken me from Hong Kong to Israel and Estonia.
       </p>
-      <br />
+      {/* Recent articles section */}
+      <h2 className="text-2xl font-semibold mb-4 select-none">
+        Recent Articles
+      </h2>
+      <div className="recent-articles">
+        {recentPosts.map((post) => (
+          <article key={post.slug} className="select-none">
+            <div className="flex items-top justify-between mb-1">
+              <h3 className="text-md">
+                <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+                  <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
+                    {post.title}
+                  </a>
+                </Link>
+              </h3>
+              <p className="text-md text-gray-500 dark:text-gray-400 font-mono">
+                {format(parseISO(post.date), "yyyy-MM-dd")}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  // Fetch all posts and sort them by date to get the most recent ones
+  const allPosts = getAllPosts(["date", "description", "slug", "title", "tag"]);
+
+  // Sort posts by date descending to show the most recent first
+  const recentPosts = allPosts.sort(
+    (a: PostType, b: PostType) =>
+      parseISO(b.date).getTime() - parseISO(a.date).getTime()
+  );
+
+  // Limit the number of recent posts to display
+  const maxRecentPosts = 5;
+  const displayedPosts = recentPosts.slice(0, maxRecentPosts);
+
+  return {
+    props: { recentPosts: displayedPosts },
+  };
 };
 
 export default Index;
