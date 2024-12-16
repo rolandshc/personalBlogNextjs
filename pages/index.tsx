@@ -10,59 +10,71 @@ type IndexProps = {
   recentPosts: PostType[];
 };
 
-export const Index = ({ recentPosts }: IndexProps): JSX.Element => {
+const MAX_RECENT_POSTS = 5;
+
+const Index: React.FC<IndexProps> = ({ recentPosts }) => {
   return (
     <Layout>
-      {/* Intro section */}
-      <p className="py-5 sm:py-10 md:py-15 lg:py-20 xl:py-25 select-none">
-        Ciao! I'm Roland, a software developer, tester, immersive experience
-        creator, and a cat slave 🐈.
-        <br />
-        My journey in tech has taken me from Hong Kong to Israel and Estonia.
-      </p>
-      {/* Recent articles section */}
-      <h2 className="text-2xl font-semibold mb-4 select-none">
-        Recent Articles
-      </h2>
-      <div className="recent-articles">
-        {recentPosts.map((post) => (
-          <article key={post.slug} className="select-none">
-            <div className="flex items-top justify-between mb-1">
-              <h3 className="text-md">
-                <Link
-                  href={`/posts/${post.slug}`}
-                  className="text-gray-900 dark:text-white dark:hover:text-blue-400"
+      {/* Intro Section */}
+      <section className="py-5 sm:py-10 md:py-15 lg:py-20 xl:py-25 select-none">
+        <p>
+          Ciao! I'm Roland, a software developer, tester, immersive experience
+          creator, and a cat slave 🐈.
+          <br />
+          My journey in tech has taken me from Hong Kong to Israel and Estonia.
+        </p>
+      </section>
+
+      {/* Recent Articles Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4 select-none">
+          Recent Articles
+        </h2>
+        <div className="recent-articles">
+          {recentPosts.map((post) => (
+            <article key={post.slug} className="select-none">
+              <header className="flex items-top justify-between mb-1">
+                <h3 className="text-md">
+                  <Link
+                    href={`/posts/${post.slug}`}
+                    className="text-gray-900 dark:text-white dark:hover:text-blue-400"
+                  >
+                    {post.title}
+                  </Link>
+                </h3>
+                <time
+                  dateTime={post.date || "1970-01-01"}
+                  className="text-md text-gray-500 dark:text-gray-400 font-mono"
                 >
-                  {post.title}
-                </Link>
-              </h3>
-              <p className="text-md text-gray-500 dark:text-gray-400 font-mono">
-                {format(parseISO(post.date), "yyyy-MM-dd")}
-              </p>
-            </div>
-          </article>
-        ))}
-      </div>
+                  {post.date ? format(parseISO(post.date), "yyyy-MM-dd") : ""}
+                </time>
+              </header>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Optional "View All" Link */}
+      {recentPosts.length >= MAX_RECENT_POSTS && (
+        <div className="text-right mt-4">
+          <Link href="/blog" className="text-blue-500 hover:underline">
+            View All Posts →
+          </Link>
+        </div>
+      )}
     </Layout>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  // Fetch all posts and sort them by date to get the most recent ones
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+  // Fetch all posts with necessary fields
   const allPosts = getAllPosts(["date", "description", "slug", "title", "tag"]);
 
-  // Sort posts by date descending to show the most recent first
-  const recentPosts = allPosts.sort(
-    (a: PostType, b: PostType) =>
-      parseISO(b.date).getTime() - parseISO(a.date).getTime()
-  );
-
   // Limit the number of recent posts to display
-  const maxRecentPosts = 5;
-  const displayedPosts = recentPosts.slice(0, maxRecentPosts);
+  const recentPosts = allPosts.slice(0, MAX_RECENT_POSTS);
 
   return {
-    props: { recentPosts: displayedPosts },
+    props: { recentPosts },
   };
 };
 

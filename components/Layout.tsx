@@ -1,9 +1,9 @@
-import React from "react";
+import React, { JSX } from "react";
 import { MetaProps } from "../types/layout";
 import Head from "./Head";
 import Navigation from "./Navigation";
-import Image from "next/image";
 import ThemeSwitch from "./ThemeSwitch";
+import { ReactNode } from 'react';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -84,4 +84,4 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
 
 export default Layout;
 
-export const getLayout = (page) => getLayout(<Layout>{page}</Layout>);
+export const getLayout = (page: ReactNode) => <Layout>{page}</Layout>;

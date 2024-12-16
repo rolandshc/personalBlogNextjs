@@ -9,12 +9,12 @@ const SocialShare: React.FC<SocialShareProps> = ({ shareUrl, title }) => {
     const linkedInShareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(title)}`;
 
     return (
-        <div>
+        <span>
             Share:
             <a href={facebookShareUrl} target="_blank" rel="noopener noreferrer" className="social-share-buttons facebook">Facebook</a>
             <a href={twitterShareUrl} target="_blank" rel="noopener noreferrer"className="social-share-buttons xcom">X.com</a>
             <a href={linkedInShareUrl} target="_blank" rel="noopener noreferrer" className="social-share-buttons linkedin">LinkedIn</a>
-        </div>
+        </span>
     );
 };
 

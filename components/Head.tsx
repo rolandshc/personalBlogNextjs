@@ -1,6 +1,6 @@
 import NextHead from "next/head";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { JSX } from "react";
 import { MetaProps } from "../types/layout";
 
 export const WEBSITE_HOST_URL = "https://rolandshum.com";
