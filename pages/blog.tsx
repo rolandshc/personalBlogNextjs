@@ -51,9 +51,7 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
         {tagList.map((tag) => (
           <button
             key={tag}
-            className={`filter ${
-              selectedTag === tag ? "filter-selected" : ""
-            }`}
+            className={`filter ${selectedTag === tag ? "filter-selected" : ""}`}
             onClick={() => handleTagClick(tag)}
           >
             {tag}
@@ -67,10 +65,11 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
             {format(parseISO(post.date), "yyyy-MM-dd")}
           </p>
           <h2 className="mb-1 text-xl">
-            <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-              <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
-                {post.title}
-              </a>
+            <Link
+              href={`/posts/${post.slug}`}
+              className="text-gray-900 dark:text-white dark:hover:text-blue-400"
+            >
+              {post.title}
             </Link>
           </h2>
           <div className="mb-1 text-gray-700 dark:text-gray-400 text-xs">

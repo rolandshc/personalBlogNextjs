@@ -29,10 +29,11 @@ export const Index = ({ recentPosts }: IndexProps): JSX.Element => {
           <article key={post.slug} className="select-none">
             <div className="flex items-top justify-between mb-1">
               <h3 className="text-md">
-                <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-                  <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
-                    {post.title}
-                  </a>
+                <Link
+                  href={`/posts/${post.slug}`}
+                  className="text-gray-900 dark:text-white dark:hover:text-blue-400"
+                >
+                  {post.title}
                 </Link>
               </h3>
               <p className="text-md text-gray-500 dark:text-gray-400 font-mono">
