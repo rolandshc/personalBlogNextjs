@@ -1,4 +1,4 @@
-import React from "react";
+import React, { JSX } from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
 
@@ -28,7 +28,7 @@ export const About = (): JSX.Element => {
         <p>Spatial computing, traveling and gaming as my hobbies 🚀</p>
         <p>Blogging helps me to reflect and learn ✍🏻</p>
         <p>Welcome to any small talks and beer 🍻</p>
-        <p>Email: <a href="mailto:contact@rolandshum.com">contact@rolandshum.com</a></p>
+        <p><a href="https://www.linkedin.com/in/rolandshum/">Find me on linkedin</a></p>
 
       </div>
     </Layout>

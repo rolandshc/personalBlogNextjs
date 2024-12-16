@@ -1,29 +1,26 @@
 import { useTheme } from "next-themes";
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const ThemeSwitch = (): JSX.Element => {
+const ThemeSwitch: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
-  const isDark = theme === "dark";
+  const isDark = theme === "dark" || theme === undefined;
+  const themeIcon = isDark ? "🌝" : "🌚";
+  const ariaLabel = isDark ? "Switch to Light Mode" : "Switch to Dark Mode";
+
   return (
     <button
       className="theme-button md:py-5 py-3 pl-5"
       type="button"
-      aria-label="Toggle Dark Mode"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-label={ariaLabel}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
     >
-      {theme === "light" ? (
-        <span className="">🌚</span>
-      ) : (
-        <span className="">🌝</span>
-      )}
+      <span className="theme-icon">{themeIcon}</span>
     </button>
   );
 };
