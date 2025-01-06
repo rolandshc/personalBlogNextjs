@@ -5,6 +5,7 @@ import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
+import ThreeCanvas from "../components/Canvas";
 
 type IndexProps = {
   recentPosts: PostType[];
@@ -17,9 +18,10 @@ const Index: React.FC<IndexProps> = ({ recentPosts }) => {
     <Layout>
       {/* Intro Section */}
       <section className="py-5 sm:py-10 md:py-15 lg:py-20 xl:py-25 select-none">
+        <ThreeCanvas />
         <p>
-          Ciao! I'm Roland, a software developer, tester, immersive experience
-          creator, and a cat slave 🐈.
+          A software developer, tester, immersive experience creator, and a cat
+          slave 🐈.
           <br />
           My journey in tech has taken me from Hong Kong to Israel and Estonia.
         </p>
@@ -33,8 +35,8 @@ const Index: React.FC<IndexProps> = ({ recentPosts }) => {
         <div className="recent-articles">
           {recentPosts.map((post) => (
             <article key={post.slug} className="select-none">
-              <header className="flex items-top justify-between mb-1">
-                <h3 className="text-md">
+              <header className="flex items-center justify-between mb-1 space-x-4">
+                <h3 className="text-md flex-1 truncate">
                   <Link
                     href={`/posts/${post.slug}`}
                     className="text-gray-900 dark:text-white dark:hover:text-blue-400"
@@ -44,7 +46,7 @@ const Index: React.FC<IndexProps> = ({ recentPosts }) => {
                 </h3>
                 <time
                   dateTime={post.date || "1970-01-01"}
-                  className="text-md text-gray-500 dark:text-gray-400 font-mono"
+                  className="text-md text-gray-500 dark:text-gray-400 font-mono whitespace-nowrap"
                 >
                   {post.date ? format(parseISO(post.date), "yyyy-MM-dd") : ""}
                 </time>
