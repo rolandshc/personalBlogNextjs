@@ -13,7 +13,7 @@ export const About = (): JSX.Element => {
         <h1>About me</h1>
         <div className="py-3">
           <Image
-            alt={`rhodes`}
+            alt={`Roland Shum`}
             src={`/images/rhodes-2022.jpeg`}
             width={400}
             height={300}
