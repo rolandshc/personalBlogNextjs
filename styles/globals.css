@@ -135,5 +135,18 @@ pre {
 
 
 .social-share-buttons {
-  @apply border border-black dark:border-white hover:border-gray-200 dark:hover:border-gray-800 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-200 px-2 mx-1 rounded-full;
-  }
+  @apply inline-block px-3 py-1 text-xs font-medium rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors;
+}
+
+/* Code copy button */
+.copy-button {
+  @apply absolute top-2 right-2 px-2 py-1 text-xs rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 opacity-0 transition-opacity;
+}
+
+pre:hover .copy-button {
+  @apply opacity-100;
+}
+
+.copy-button:hover {
+  @apply bg-gray-300 dark:bg-gray-600;
+}
