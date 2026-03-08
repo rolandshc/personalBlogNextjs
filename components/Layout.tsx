@@ -1,16 +1,13 @@
-import React, { JSX } from "react";
+import React, { JSX, ReactNode } from "react";
 import { MetaProps } from "../types/layout";
 import Head from "./Head";
 import Navigation from "./Navigation";
 import ThemeSwitch from "./ThemeSwitch";
-import { ReactNode } from 'react';
 
 type LayoutProps = {
   children: React.ReactNode;
   customMeta?: MetaProps;
 };
-
-export const WEBSITE_HOST_URL = "https://rolandshum.com";
 
 const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   const year = new Date().getUTCFullYear();

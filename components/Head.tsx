@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import React, { JSX } from "react";
 import { MetaProps } from "../types/layout";
 
-export const WEBSITE_HOST_URL = "https://rolandshum.com";
+export const WEBSITE_HOST_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://rolandshum.com";
 
 const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
   const router = useRouter();
@@ -11,8 +12,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
     title: "Roland Shum",
     description:
       "Hello I am Roland Shum. An IT professional based in Tallinn, Estonia. This is my personal website sharing my research, hobbies and thoughts.",
-    // image: `${WEBSITE_HOST_URL}/images/site-preview.jpeg`,
-    image: "https://rolandshum.com/images/site-preview.jpeg",
+    image: `${WEBSITE_HOST_URL}/images/site-preview.jpeg`,
     type: "website",
     ...customMeta,
   };
@@ -22,6 +22,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       <meta property="og:description" content={meta.description} />
       <meta property="og:url" content={`${WEBSITE_HOST_URL}${router.asPath}`} />
       <link rel="canonical" href={`${WEBSITE_HOST_URL}${router.asPath}`} />
+      <link rel="alternate" type="application/rss+xml" title="Roland Shum" href={`${WEBSITE_HOST_URL}/feed.xml`} />
       <meta property="og:type" content={meta.type} />
       <meta property="og:site_name" content="Roland Shum" />
       <meta property="og:title" content={meta.title} />
