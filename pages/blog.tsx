@@ -32,9 +32,16 @@ const Blog = ({ posts }: BlogProps): JSX.Element => {
   const parseTags = (tags: string): string[] =>
     tags.split(",").map((tag) => tag.trim());
 
+  useEffect(() => {
+    if (router.query.tag) {
+      setSelectedTag(router.query.tag as string);
+    }
+  }, [router.query.tag]);
+
   const handleTagClick = (newTag: string) => {
     setSelectedTag(newTag);
     setCurrentPage(1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const filteredPosts = useMemo(
@@ -52,7 +59,10 @@ const Blog = ({ posts }: BlogProps): JSX.Element => {
     [filteredPosts, indexOfFirstPost, indexOfLastPost]
   );
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <Layout>
@@ -105,6 +115,7 @@ const Blog = ({ posts }: BlogProps): JSX.Element => {
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={filteredPosts.length}
+        currentPage={currentPage}
         paginate={paginate}
       />
     </Layout>

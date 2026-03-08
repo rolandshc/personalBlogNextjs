@@ -3,12 +3,14 @@ import React from "react";
 interface PaginationProps {
   postsPerPage: number;
   totalPosts: number;
+  currentPage: number;
   paginate: (pageNumber: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
   postsPerPage,
   totalPosts,
+  currentPage,
   paginate,
 }) => {
   const pageNumbers = [];
@@ -17,37 +19,22 @@ const Pagination: React.FC<PaginationProps> = ({
     pageNumbers.push(i);
   }
 
+  if (pageNumbers.length <= 1) return null;
+
   return (
     <nav aria-label="Pagination Navigation">
-      <ul
-        className="pagination"
-        style={{
-          display: "flex",
-          justifyContent: "center", // Center pagination in the middle
-          listStyleType: "none", // Remove default bullets
-          padding: 0, // Remove padding
-          margin: 0, // Remove margin
-        }}
-      >
+      <ul className="flex justify-center list-none p-0 m-0">
         {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className="pagination-item"
-            style={{
-              margin: "0 5px", // Add spacing between items
-            }}
-          >
+          <li key={number} className="mx-1">
             <button
               onClick={() => paginate(number)}
-              className="pagination-link text-gray-900 dark:text-white dark:hover:text-blue-400"
-              style={{
-                border: "1px solid gray", // Add a border to buttons
-                background: "none",
-                cursor: "pointer",
-                padding: "8px 12px", // Add padding for clickable area
-                borderRadius: "4px", // Round the corners
-              }}
+              className={`border border-gray-400 bg-transparent cursor-pointer px-3 py-2 rounded text-gray-900 dark:text-white dark:hover:text-blue-400 ${
+                currentPage === number
+                  ? "bg-gray-200 dark:bg-gray-700 font-bold"
+                  : ""
+              }`}
               aria-label={`Go to page ${number}`}
+              aria-current={currentPage === number ? "page" : undefined}
             >
               {number}
             </button>
@@ -57,6 +44,5 @@ const Pagination: React.FC<PaginationProps> = ({
     </nav>
   );
 };
-  
 
 export default Pagination;

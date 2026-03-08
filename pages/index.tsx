@@ -5,7 +5,11 @@ import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
-import ThreeCanvas from "../components/Canvas";
+import dynamic from "next/dynamic";
+
+const ThreeCanvas = dynamic(() => import("../components/Canvas"), {
+  ssr: false,
+});
 
 type IndexProps = {
   recentPosts: PostType[];

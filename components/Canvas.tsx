@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Canvas, extend, useFrame } from "@react-three/fiber";
+import { Canvas, extend, useFrame, type ThreeElements } from "@react-three/fiber";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import * as THREE from "three";
@@ -7,21 +7,29 @@ import helvetiker from "three/examples/fonts/helvetiker_regular.typeface.json";
 
 extend({ TextGeometry });
 
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    textGeometry: {
+      args?: ConstructorParameters<typeof TextGeometry>;
+      attach?: string;
+    };
+  }
+}
+
 const HelloWorldText = () => {
-  const textRef = useRef();
+  const textRef = useRef<THREE.Mesh>(null);
   const font = new FontLoader().parse(helvetiker);
 
   useEffect(() => {
     if (textRef.current) {
       textRef.current.geometry.computeBoundingBox();
       const { boundingBox } = textRef.current.geometry;
-      const xOffset =
-        (boundingBox.max.x - boundingBox.min.x) / -2; // Center horizontally
-      const yOffset =
-        (boundingBox.max.y - boundingBox.min.y) / -2; // Center vertically
-      const zOffset =
-        (boundingBox.max.z - boundingBox.min.z) / -2; // Center depth-wise
-      textRef.current.position.set(xOffset, yOffset, zOffset);
+      if (boundingBox) {
+        const xOffset = (boundingBox.max.x - boundingBox.min.x) / -2;
+        const yOffset = (boundingBox.max.y - boundingBox.min.y) / -2;
+        const zOffset = (boundingBox.max.z - boundingBox.min.z) / -2;
+        textRef.current.position.set(xOffset, yOffset, zOffset);
+      }
     }
   }, []);
 
@@ -29,13 +37,13 @@ const HelloWorldText = () => {
     <mesh ref={textRef}>
       <textGeometry
         args={[
-          "Ciao! I'm Roland", // The text to display
+          "Ciao! I'm Roland",
           {
             font: font,
-            size: 1, // Font size (made larger)
-            height: 0.01, // Depth of the text
-            curveSegments: 20, // Smoothness of the curves
-            bevelEnabled: true, // Add bevel to the text
+            size: 1,
+            height: 0.01,
+            curveSegments: 20,
+            bevelEnabled: true,
             bevelThickness: 0.01,
             bevelSize: 0.01,
             bevelSegments: 3,
@@ -48,18 +56,17 @@ const HelloWorldText = () => {
 };
 
 const MovingSpotlight = () => {
-  const spotlightRef = useRef();
-  const directionRef = useRef(1); // 1 for right, -1 for left
+  const spotlightRef = useRef<THREE.SpotLight>(null);
+  const directionRef = useRef(1);
 
   useFrame(() => {
     if (spotlightRef.current) {
       spotlightRef.current.position.x += directionRef.current * 0.05;
 
-      // Reverse direction when limits are reached
       if (spotlightRef.current.position.x > 10) {
-        directionRef.current = -1; // Move left
+        directionRef.current = -1;
       } else if (spotlightRef.current.position.x < -10) {
-        directionRef.current = 1; // Move right
+        directionRef.current = 1;
       }
     }
   });
