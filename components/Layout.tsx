@@ -15,7 +15,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
     <>
       <Head customMeta={customMeta} />
       <header>
-        <div className="max-w-5xl px-8 mx-auto">
+        <div className="max-w-5xl px-4 sm:px-8 mx-auto">
           <div className="flex items-start justify-between">
             <Navigation />
             <div className="float-right">
@@ -25,10 +25,10 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         </div>
       </header>
       <main>
-        <div className="max-w-5xl px-8 mx-auto py-8">{children}</div>
+        <div className="max-w-5xl px-4 sm:px-8 mx-auto py-8">{children}</div>
       </main>
       <footer className="select-none py-8">
-        <div className="max-w-5xl px-8 mx-auto text-gray-600 dark:text-gray-400">
+        <div className="max-w-5xl px-4 sm:px-8 mx-auto text-gray-600 dark:text-gray-400">
           <div className="flex flex-col items-center md:flex-row md:justify-between">
             <div className="text-center md:text-left">
               <span>Copyright Roland Shum © {year}</span>
